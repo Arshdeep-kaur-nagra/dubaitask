@@ -20,10 +20,10 @@
 <body>
     <main>
         <div class="ds-flex">
-            <!-----------------------Sidebar--------------------------->
+            <!-----------------------Sidebar------------------------------->
             <div class="sidebar" id="menu">
                 <div class="cart-options">
-                    <ul class="flex-center">
+                    <ul class="flex-center align-center">
                         <li class="mt-0">
                             <img src="assets/img/logo.png" class="logo-sm" />
                         </li>
@@ -117,7 +117,7 @@
                             <span class="tag">1</span>
                         </li>
                         <li>
-                            <a href="#" class="border-none"><img src="assets/img/user.png" class="img-bordered" /></a>
+                            <a href="#" class="border-none img-bordered"><img src="assets/img/user.png" /></a>
                             <p></p>
                         </li>
                         <li class="mb-0">
@@ -129,34 +129,474 @@
                 </div>
             </div>
             <!-----------------------main content--------------------------->
-            <div class="content w-100">
-                <div class="row m-0">
-                    <div class="col-lg-6 bg-gray custom-p">
-                        <div class="ds-flex-between product-nav">
-                            <select name="warehouse-name" id="warehouse" class="theme-select w-40">
-                                <option value="1">Warehouse Name</option>
-                                <option value="2">Demo</option>
-                                <option value="3">Demo</option>
-                            </select>
-                            <select name="category" id="category" class="theme-select w-23">
-                                <option value="1">Category</option>
-                                <option value="2">Demo</option>
-                                <option value="3">Demo</option>
-                            </select>
-                            <select name="brand" id="brand" class="theme-select w-23">
-                                <option value="1">Brand</option>
-                                <option value="2">Demo</option>
-                                <option value="3">Demo</option>
-                            </select>
-                            <button class="btn bg-white border-light" type="button"><img
-                                    src="assets/img/icon-expand.png"></button>
-                        </div>
-                        <div class="ds-flex-between product-nav">
-
+            <div class="content w-100 ">
+                <div class="row m-0 ht-100">
+             <!-----------------------main content left--------------------------->
+                    <div class="col-lg-6 bg-gray custom-p overflow-y-hidden ht-100">
+                        <div class="content-right-wrp">
+                            <div class="ds-flex-between product-nav">
+                                <select name="warehouse-name" id="warehouse" class="theme-select w-40 mr-5">
+                                    <option value="1">Warehouse Name</option>
+                                    <option value="2">Demo</option>
+                                    <option value="3">Demo</option>
+                                </select>
+                                <select name="category" id="category" class="theme-select w-26 mr-5">
+                                    <option value="1">Category</option>
+                                    <option value="2">Demo</option>
+                                    <option value="3">Demo</option>
+                                </select>
+                                <select name="brand" id="brand" class="theme-select w-26 mr-5">
+                                    <option value="1">Brand</option>
+                                    <option value="2">Demo</option>
+                                    <option value="3">Demo</option>
+                                </select>
+                                <button class="btn bg-white border-light" type="button"><img
+                                        src="assets/img/icon-expand.png"></button>
+                            </div>
+                            <div class="ds-flex product-nav mt-6">
+                                <div class="input-group mr-5">
+                                    <span class="input-group-addon bg-white border-none-r border-light"><img
+                                            src="assets/img/icon-search.png"></span>
+                                    <input id="search" type="search"
+                                        class="form-control border-none-l border-light custom-input-text" name="search"
+                                        placeholder="Product name, Barcode, Item code">
+                                    </div>
+                                     <button type="button" class="btn bg-light-gray"><img src="assets/img/icon-plus.png" class="mr-3">Add Prodcut</button>
+                            </div>
+                            <!--------------------------product listing----------------------------------->
+                            <div class="product-listing mt-6 pt-2 customs-scroll">
+                                <div class="row m-0 flex-start wrap">
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p3.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Essential Regular Fit Shirt</p>
+                                            <p class="p-price bold"><span class="mr-2"><s>45.00 SAR</s></span> 30.00 SAR
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p2.png">
+                                                <span class="ribbon ribbon-purple">New</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Casual Textured Relaxed Fit Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                                <span class="ribbon ribbon-red">Sold out</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p3.png">
+                                                <span class="ribbon ribbon-red">Sold out</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Essential Regular Fit Shirt</p>
+                                            <p class="p-price bold"><span class="mr-2"><s>45.00 SAR</s></span> 30.00 SAR
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p2.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Casual Textured Relaxed Fit Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                                <span class="ribbon ribbon-red">Sold out</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p3.png">
+                                                <span class="ribbon ribbon-red">Sold out</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Essential Regular Fit Shirt</p>
+                                            <p class="p-price bold"><span class="mr-2"><s>45.00 SAR</s></span> 30.00 SAR
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p2.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Casual Textured Relaxed Fit Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                                <span class="ribbon ribbon-red">Sold out</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p3.png">
+                                                <span class="ribbon ribbon-red">Sold out</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Essential Regular Fit Shirt</p>
+                                            <p class="p-price bold"><span class="mr-2"><s>45.00 SAR</s></span> 30.00 SAR
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p2.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Casual Textured Relaxed Fit Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                                <span class="ribbon ribbon-red">Sold out</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p3.png">
+                                                <span class="ribbon ribbon-red">Sold out</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Essential Regular Fit Shirt</p>
+                                            <p class="p-price bold"><span class="mr-2"><s>45.00 SAR</s></span> 30.00 SAR
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p2.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Casual Textured Relaxed Fit Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="listing-wrp">
+                                            <div class="img-wrp bg-white flex-center">
+                                                <img src="assets/img/p1.png">
+                                                <span class="ribbon ribbon-red">Sold out</span>
+                                            </div>
+                                            <p class="bold mt-5 mb-1">Short Sleeve Striped Shirt</p>
+                                            <p class="p-price bold">45.00 SAR</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+             <!-----------------------main content right--------------------------->
+            <div class="col-lg-6 custom-p">
+                <div class="cart-details">
+                    <div class="ds-flex-between flex-wrap align-center">
+                        <div class="invoice ds-flex align-center">
+                            <h3 class="m-0">Invoice Details</h3>
+                            <div class="tag-invoice flex-center ml-4 align-center"><p class="m-0 pt-1">6</p></div>
+                            <select name="price-list" id="price-list" class="theme-select ml-5 h-small price-width">
+                                <option value="1">Price List</option>
+                                <option value="2">Demo</option>
+                                <option value="3">Demo</option>
+                            </select>
+                        </div>
+                        <div class="flex-wrap align-center">
+                            <label class="custom-radio">
+                                <input type="radio" name="radio-group">
+                                <span class="radio-circle"></span>
+                                <span class="radio-label">Cash Invoice</span>
+                              </label>
+                              <label class="custom-radio">
+                                <input type="radio" name="radio-group">
+                                <span class="radio-circle"></span>
+                                <span class="radio-label">Credit Invoice</span>
+                              </label>
+                            </div>
+                    </div>
+                <div class="cart-table mt-6 pt-3 customs-scroll">
+                    <table>
+                        <tr>
+                          <th>Product Name</th>
+                          <th>Stock</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Discount</th>
+                          <th>Tax</th>
+                          <th>Subtotal</th>
+                          <th></th>
+                        </tr>
+                        
+                        <tr>
+                          <td>Casual Texture of Relaxed Shirt</td>
+                          <td>20 (items)</td>
+                          <td>
+                            <div class="btn-wrp">
+                                <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                <span id="valueDisplay" class="value">0</span>
+                                <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                            </div>
+                          </td>
+                          <td>10.00SAR</td>
+                          <td>0.00</td>
+                          <td>0.00</td>
+                          <td>10.00SAR</td>
+                          <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                        </tr>
+                        <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                          <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                          <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                          <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                          <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                          <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                          <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                          <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                          <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                          <tr>
+                            <td>Casual Texture of Relaxed Shirt</td>
+                            <td>20 (items)</td>
+                            <td>
+                              <div class="btn-wrp">
+                                  <button id="decreaseButton" class="btn bg-white border-pr-r">-</button>
+                                  <span id="valueDisplay" class="value">0</span>
+                                  <button id="increaseButton" class="btn bg-white border-pr-l">+</button>
+                              </div>
+                            </td>
+                            <td>10.00SAR</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>10.00SAR</td>
+                            <td><button type="button" class="btn bg-red"><img src="assets/img/icon-delete.png"></button></td>
+                          </tr>
+                        </table>
+                   </div>
+                  </div>
+            <!------------------------------cart footer--------------------------------------->
+            <div class="cart-footer">
+                <div class="ds-flex-between flex-wrap align-center">
+                    <button class="btn bg-white ds-flex align-center">
+                        <svg width="27" height="32" viewBox="0 0 27 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-3">
+                            <path d="M15.7059 14.5H6.88235M9.82353 20.5H6.88235M18.6471 8.5H6.88235M24.5294 16V8.2C24.5294 5.67976 24.5294 4.41965 24.0486 3.45704C23.6256 2.61031 22.9507 1.9219 22.1205 1.49047C21.1768 1 19.9414 1 17.4706 1H8.05882C5.588 1 4.35259 1 3.40887 1.49047C2.57874 1.9219 1.90382 2.61031 1.48085 3.45704C1 4.41965 1 5.67976 1 8.2V23.8C1 26.3202 1 27.5804 1.48085 28.543C1.90382 29.3897 2.57874 30.0781 3.40887 30.5095C4.35259 31 5.588 31 8.05882 31H12.7647M18.6471 22L26 29.5M26 22L18.6471 29.5" stroke="#FF3030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                        Hold invoice</button>
                 </div>
             </div>
+               </div>
+           </div>
+        </div>
         </div>
     </main>
 
@@ -169,6 +609,46 @@
                 $(this).closest("a").addClass("active");
             });
         });
+    </script>
+    
+    <script>
+       // Get the HTML elements 
+        const decreaseButton = document.getElementById('decreaseButton');
+        const increaseButton = document.getElementById('increaseButton');
+        const valueDisplay = document.getElementById('valueDisplay');
+    
+        let value = 0; // Initial value
+    
+        // Function to decrease the value
+        decreaseButton.addEventListener('click', () => {
+            value--;
+            updateDisplay();
+            
+        });
+    
+        // Function to increase the value
+        increaseButton.addEventListener('click', () => {
+            value++;
+            updateDisplay();
+        });
+    
+        // Function to update the display
+        function updateDisplay() {
+            valueDisplay.textContent = value;
+            
+            // Check if value is less than zero and delete item
+            if (value < 0) {
+                deleteItem();
+            }
+        }
+    
+        // Function to delete item (simulated action)
+        function deleteItem() {
+            // Simulated action: Here you can perform actions like removing an item from a list or displaying a message
+            console.log('Item deleted!');
+            value = 0; // Reset the value to zero
+            updateDisplay(); // Update display to reset value to zero
+        }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
