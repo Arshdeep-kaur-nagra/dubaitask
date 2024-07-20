@@ -12,17 +12,29 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
+    <!-------font awesome icons----->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- CSS file -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Wasetah</title>
 </head>
 
 <body>
-    <main>
-        <div class="ds-flex">
+    <main class="">
+        <!-------------------------Mobile nav--------------------------------------->
+        <div class="row m-0">
+            <div class="col-lg-12">
+                <div class="nav-mob ds-flex-between w-100 align-center">
+                    <a href="#"><img src="assets/img/logo.svg" class="logo-nav"></a>
+                    <button class="btn  bg-white" id="openBtn"><i class="fa fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class=" main-wrapper ds-flex" id="main-wrapper">
             <!-----------------------Sidebar------------------------------->
             <div class="sidebar" id="menu">
                 <div class="cart-options">
+                    <a href="javascript:void(0)" id="closeBtn">&times;</a>
                     <ul class="flex-center align-center">
                         <li class="mt-0">
                             <img src="assets/img/logo.svg" class="logo-sm" />
@@ -103,18 +115,20 @@
                                 <p>Dashboard</p>
                             </a>
                         </li>
-                        <li class="p-relative tag-wrp">
+                        <li class="tag-wrp">
                             <a href="#">
-                                <svg width="27" height="32" viewBox="0 0 27 32" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M15.7059 14.5H6.88235M9.82353 20.5H6.88235M18.6471 8.5H6.88235M24.5294 16V8.2C24.5294 5.67976 24.5294 4.41965 24.0486 3.45704C23.6256 2.61031 22.9507 1.9219 22.1205 1.49047C21.1768 1 19.9414 1 17.4706 1H8.05882C5.588 1 4.35259 1 3.40887 1.49047C2.57874 1.9219 1.90382 2.61031 1.48085 3.45704C1 4.41965 1 5.67976 1 8.2V23.8C1 26.3202 1 27.5804 1.48085 28.543C1.90382 29.3897 2.57874 30.0781 3.40887 30.5095C4.35259 31 5.588 31 8.05882 31H12.7647M18.6471 22L26 29.5M26 22L18.6471 29.5"
-                                        stroke="#AFB8C1" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
+                                <span class="p-relative"><svg width="27" height="32" viewBox="0 0 27 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.7059 14.5H6.88235M9.82353 20.5H6.88235M18.6471 8.5H6.88235M24.5294 16V8.2C24.5294 5.67976 24.5294 4.41965 24.0486 3.45704C23.6256 2.61031 22.9507 1.9219 22.1205 1.49047C21.1768 1 19.9414 1 17.4706 1H8.05882C5.588 1 4.35259 1 3.40887 1.49047C2.57874 1.9219 1.90382 2.61031 1.48085 3.45704C1 4.41965 1 5.67976 1 8.2V23.8C1 26.3202 1 27.5804 1.48085 28.543C1.90382 29.3897 2.57874 30.0781 3.40887 30.5095C4.35259 31 5.588 31 8.05882 31H12.7647M18.6471 22L26 29.5M26 22L18.6471 29.5"
+                                            stroke="#AFB8C1" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="tag">1</span>
+                                </span>
                                 <p>Hold list</p>
                             </a>
-                            <span class="tag">1</span>
+
                         </li>
                         <li>
                             <a href="#" class="border-none img-bordered"><img src="assets/img/user.png" /></a>
@@ -128,6 +142,7 @@
                     </ul>
                 </div>
             </div>
+
             <!-----------------------main content--------------------------->
             <div class="content w-100 ">
                 <div class="row m-0 ht-100 pb-5">
@@ -145,12 +160,12 @@
                                     <option value="2">Demo</option>
                                     <option value="3">Demo</option>
                                 </select>
-                                <select name="brand" id="brand" class="theme-select w-26 mr-5">
+                                <select name="brand" id="brand" class="theme-select w-26">
                                     <option value="1">Brand</option>
                                     <option value="2">Demo</option>
                                     <option value="3">Demo</option>
                                 </select>
-                                <button id="expandButton" class="btn bg-white border-light expand-bg"
+                                <button id="expandButton" class="btn bg-white border-light expand-bg ml-5"
                                     type="button"></button>
                             </div>
                             <div class="ds-flex product-nav mt-6">
@@ -166,7 +181,7 @@
                             </div>
                             <!--------------------------product listing----------------------------------->
                             <div class="product-listing mt-6 pt-2 customs-scroll">
-                                <div class="row m-0 flex-start wrap">
+                                <div class="product-listing-row row m-0 flex-start wrap">
                                     <div class="col">
                                         <div class="listing-wrp">
                                             <div class="img-wrp bg-white flex-center">
@@ -389,8 +404,8 @@
                     <!-----------------------main content right--------------------------->
                     <div class="col-lg-6 custom-p overflow-y-hidden ht-100" id="invoice-parent ht-100">
                         <div class="cart-details ds-flex-between dr-col ht-100">
-                            <div class="ds-flex-between flex-wrap align-center">
-                                <div class="invoice ds-flex align-center">
+                            <div class="ds-flex-between flex-wrap align-center wrap">
+                                <div class="invoice ds-flex align-center mb-5">
                                     <h3 class="m-0">Invoice Details</h3>
                                     <div class="tag-invoice flex-center ml-4 align-center">
                                         <p class="m-0 pt-1">6</p>
@@ -402,7 +417,7 @@
                                         <option value="3">Demo</option>
                                     </select>
                                 </div>
-                                <div class="ds-flex flex-wrap align-center">
+                                <div class="ds-flex flex-wrap align-center mb-5">
                                     <label class="custom-radio mr-2">
                                         <input type="radio" name="radio-group">
                                         <span class="radio-circle"></span>
@@ -415,7 +430,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="cart-table mt-6 pt-3 customs-scroll">
+                            <div class="cart-table mt-4  customs-scroll">
                                 <table id="myTable">
                                     <tr>
                                         <th>Product Name</th>
@@ -617,49 +632,51 @@
                                     </tr>
                                 </table>
                             </div>
-                               <!------------------------------cart footer--------------------------------------->
-                        <div class="cart-footer">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <button class="btn bg-white ds-flex align-center btn-shadow semi-bold mt-custom">
-                                        <svg width="27" height="32" viewBox="0 0 27 32" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="mr-3">
-                                            <path
-                                                d="M15.7059 14.5H6.88235M9.82353 20.5H6.88235M18.6471 8.5H6.88235M24.5294 16V8.2C24.5294 5.67976 24.5294 4.41965 24.0486 3.45704C23.6256 2.61031 22.9507 1.9219 22.1205 1.49047C21.1768 1 19.9414 1 17.4706 1H8.05882C5.588 1 4.35259 1 3.40887 1.49047C2.57874 1.9219 1.90382 2.61031 1.48085 3.45704C1 4.41965 1 5.67976 1 8.2V23.8C1 26.3202 1 27.5804 1.48085 28.543C1.90382 29.3897 2.57874 30.0781 3.40887 30.5095C4.35259 31 5.588 31 8.05882 31H12.7647M18.6471 22L26 29.5M26 22L18.6471 29.5"
-                                                stroke="#FF3030" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                        Hold invoice</button>
-                                    <button class="btn bg-white ds-flex align-center btn-shadow semi-bold mt-6">
-                                        <svg width="25" height="31" viewBox="0 0 25 31" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="mr-3">
-                                            <path
-                                                d="M15.375 14.05H6.75M9.625 19.85H6.75M18.25 8.25H6.75M24 7.96V23.04C24 25.4762 24 26.6943 23.53 27.6249C23.1165 28.4434 22.4568 29.1088 21.6453 29.5259C20.7228 30 19.5152 30 17.1 30H7.9C5.48477 30 4.27716 30 3.35467 29.5259C2.54322 29.1088 1.88349 28.4434 1.47003 27.6249C1 26.6943 1 25.4762 1 23.04V7.96C1 5.52377 1 4.30566 1.47003 3.37514C1.88349 2.55664 2.54322 1.89117 3.35467 1.47412C4.27716 1 5.48477 1 7.9 1H17.1C19.5152 1 20.7228 1 21.6453 1.47412C22.4568 1.89117 23.1165 2.55664 23.53 3.37514C24 4.30566 24 5.52377 24 7.96Z"
-                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                        Edit Invoice T&C
-                                    </button>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="bill-details">
-                                        <button type="button" class="btn bg-white ds-flex align-center btn-navy p-0">
-                                            <img src="assets/img/icon-view.svg" class="mr-3 mb-4">View Details
+                            <!------------------------------cart footer--------------------------------------->
+                            <div class="cart-footer">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button
+                                            class="btn bg-white ds-flex align-center btn-shadow semi-bold mt-custom">
+                                            <svg width="27" height="32" viewBox="0 0 27 32" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" class="mr-3">
+                                                <path
+                                                    d="M15.7059 14.5H6.88235M9.82353 20.5H6.88235M18.6471 8.5H6.88235M24.5294 16V8.2C24.5294 5.67976 24.5294 4.41965 24.0486 3.45704C23.6256 2.61031 22.9507 1.9219 22.1205 1.49047C21.1768 1 19.9414 1 17.4706 1H8.05882C5.588 1 4.35259 1 3.40887 1.49047C2.57874 1.9219 1.90382 2.61031 1.48085 3.45704C1 4.41965 1 5.67976 1 8.2V23.8C1 26.3202 1 27.5804 1.48085 28.543C1.90382 29.3897 2.57874 30.0781 3.40887 30.5095C4.35259 31 5.588 31 8.05882 31H12.7647M18.6471 22L26 29.5M26 22L18.6471 29.5"
+                                                    stroke="#FF3030" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Hold invoice</button>
+                                        <button class="btn bg-white ds-flex align-center btn-shadow semi-bold mt-6">
+                                            <svg width="25" height="31" viewBox="0 0 25 31" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" class="mr-3">
+                                                <path
+                                                    d="M15.375 14.05H6.75M9.625 19.85H6.75M18.25 8.25H6.75M24 7.96V23.04C24 25.4762 24 26.6943 23.53 27.6249C23.1165 28.4434 22.4568 29.1088 21.6453 29.5259C20.7228 30 19.5152 30 17.1 30H7.9C5.48477 30 4.27716 30 3.35467 29.5259C2.54322 29.1088 1.88349 28.4434 1.47003 27.6249C1 26.6943 1 25.4762 1 23.04V7.96C1 5.52377 1 4.30566 1.47003 3.37514C1.88349 2.55664 2.54322 1.89117 3.35467 1.47412C4.27716 1 5.48477 1 7.9 1H17.1C19.5152 1 20.7228 1 21.6453 1.47412C22.4568 1.89117 23.1165 2.55664 23.53 3.37514C24 4.30566 24 5.52377 24 7.96Z"
+                                                    stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            Edit Invoice T&C
                                         </button>
-                                        <div class="total-here ds-flex-between align-center">
-                                            <h3 class="bold">Total</h3>
-                                            <h4 class="bold font-21" id="totalSubtotal">0</h4>
-                                        </div>
-                                        <div class="ds-flex-between more-btns mt-4">
-                                            <button type="button" class="btn bg-white b-red-btn btn-big mr-4">Clear
-                                                All</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="bill-details">
                                             <button type="button"
-                                                class="btn bg-white b-blue-btn btn-big ml-4">Checkout</button>
+                                                class="btn bg-white ds-flex align-center btn-navy p-0">
+                                                <img src="assets/img/icon-view.svg" class="mr-3 mb-4">View Details
+                                            </button>
+                                            <div class="total-here ds-flex-between align-center">
+                                                <h3 class="bold">Total</h3>
+                                                <h4 class="bold font-21" id="totalSubtotal">0</h4>
+                                            </div>
+                                            <div class="ds-flex-between more-btns mt-4">
+                                                <button type="button" class="btn bg-white b-red-btn btn-big mr-4">Clear
+                                                    All</button>
+                                                <button type="button"
+                                                    class="btn bg-white b-blue-btn btn-big ml-4">Checkout</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -710,6 +727,8 @@
                         $content.removeClass('col-lg-6').addClass('col-lg-12');
                         $('#expandButton').addClass('btn-small');
                         $('#invoice-parent').addClass('hide-me');
+                        var cols = $('.col');
+                        cols.animate({ width: '20%' }, 300);
                     });
                 } else {
                     // Reverse animation
@@ -719,6 +738,8 @@
                         $content.removeClass('col-lg-12').addClass('col-lg-6');
                         $('#expandButton').removeClass('btn-small');
                         $('#invoice-parent').removeClass('hide-me');
+                        var cols = $('.col');
+                        cols.animate({ width: '25%' }, 300);
                     });
                 }
             });
@@ -803,6 +824,31 @@
                 calculateTotal();
             });
         });
+
+    </script>
+    <script>
+
+        document.getElementById("openBtn").onclick = function () {
+            openNav();
+        };
+
+        document.getElementById("closeBtn").onclick = function () {
+            closeNav();
+        };
+
+        function openNav() {
+            document.getElementById("menu").style.width = "200px";
+            var element = document.getElementById("main-wrapper");
+            element.classList.add("main-wrapper-sm");
+        }
+
+        function closeNav() {
+            document.getElementById("menu").style.width = "0";
+            var element = document.getElementById("main-wrapper");
+            element.classList.remove("main-wrapper-sm");
+        };
+
+
 
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
