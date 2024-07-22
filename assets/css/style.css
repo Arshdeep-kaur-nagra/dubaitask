@@ -5,9 +5,12 @@
   --red: #ed2121;
   --purple: #8250df;
   --purple-dark: #512A97;
+  --primary: #218BFF;
+  --secondary: #0969DA;
   --gray: #f6f8fa;
   --light-gray: rgb(208, 215, 222, 0.7);
   --white: #fff;
+  --gray-dim: #F6F7FF;
   --navy: #002155;
   --blue: #218bff;
   --font-12: 12.52px;
@@ -86,7 +89,7 @@ html {
 /* border */
 
 .border-none-all {
-  border: none;
+  border: none !important;
 }
 
 .border-none-l {
@@ -106,11 +109,11 @@ html {
 }
 
 .border-pr-r {
-  border-right: 1.5px solid var(--purple) !important;
+  border-right: 1.5px solid var(--primary) !important;
 }
 
 .border-pr-l {
-  border-left: 1.5px solid var(--purple) !important;
+  border-left: 1.5px solid var(--primary) !important;
 }
 
 .border-light {
@@ -453,11 +456,11 @@ button:focus, button:hover {
 /* colors */
 
 .text-purple {
-  color: var(--purple);
+  color: var(--primary);
 }
 
 .text-pr-dark {
-  color: var(--purple-dark);
+  color: var(--primary);
 }
 
 .text-black {
@@ -480,6 +483,18 @@ button:focus, button:hover {
   color: var(--navy);
 }
 
+.text-secondary {
+  color: var(--secondary);
+}
+
+.bg-navy {
+  background: var(--navy);
+}
+
+.bg-secondary {
+  background: var(--secondary);
+}
+
 .bg-white {
   background: var(--white);
 }
@@ -489,11 +504,15 @@ button:focus, button:hover {
 }
 
 .bg-pr-dark {
-  background: var(--purple-dark);
+  background: var(--primary);
 }
 
 .bg-light-gray {
   background: var(--light-gray);
+}
+
+.bg-gray-dim {
+  background: var(--gray-dim);
 }
 
 .bg-transi {
@@ -552,20 +571,32 @@ button:focus, button:hover {
   height: 16px;
   width: 16px;
   background-color: #fff;
-  border: 1px solid var(--purple);
+  border: 1px solid var(--primary);
   border-radius: 50%;
 }
 
 .custom-radio input:checked ~ .radio-circle {
-  background: url(../img/Circle.png);
+  background: url(../img/circle-radio.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .radio-label {
-  font-size: var(--font-16);
-  font-weight: 400;
+  font-weight: 500;
   font-family: poppins;
+}
+
+.radio-bl .radio-circle{
+  border: 1px solid var(--black);
+}
+
+.radio-bl .radio-label{
+  font-weight: 600;
+  font-size: var(--font-18);
+}
+
+.radio-bl .radio-circle{
+   top: 6px;
 }
 
 .theme-select {
@@ -598,6 +629,10 @@ button:focus, button:hover {
 
 .align-center {
   align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
 }
 
 .ds-flex-end {
@@ -670,7 +705,7 @@ button:focus, button:hover {
   display: block;
   height: 60px;
   width: 7px;
-  background-color: var(--purple);
+  background-color: var(--primary);
   right: 0;
   position: absolute;
   top: -20px;
@@ -679,12 +714,12 @@ button:focus, button:hover {
 
 .sidebar ul li:has(.active) a p,
 .sidebar ul li a:hover {
-  color: var(--purple);
+  color: var(--primary);
 }
 
 .sidebar ul li:has(.active) a svg path,
 .sidebar ul li a:hover svg path {
-  stroke: var(--purple) !important;
+  stroke: var(--primary) !important;
 }
 
 .logo-sm {
@@ -771,7 +806,7 @@ button:focus, button:hover {
 }
 
 .ribbon-purple {
-  background-color: var(--purple-dark);
+  background-color: var(--primary);
 }
 
 .ribbon-red {
@@ -784,7 +819,7 @@ button:focus, button:hover {
 }
 
 .p-price {
-  color: var(--purple);
+  color: var(--primary);
   font-size: var(--font-12);
 }
 
@@ -819,11 +854,11 @@ button:focus, button:hover {
 }
 
 .invoice h3 {
-  color: var(--purple);
+  color: var(--primary);
 }
 
 .tag-invoice {
-  background-color: var(--purple);
+  background-color: var(--primary);
   font-size: var(--font-16);
   height: 26px;
   width: 26px;
@@ -886,7 +921,7 @@ button:focus, button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1.5px solid var(--purple);
+  border: 1.5px solid var(--primary);
 }
 .value {
   font-size: var(--font-16);
@@ -901,8 +936,8 @@ button:focus, button:hover {
   width: 25px;
   height: 25px;
   cursor: pointer;
-  border: 1px solid var(--purple);
-  color: var(--purple);
+  border: 1px solid var(--primary);
+  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1045,6 +1080,7 @@ button:focus, button:hover {
 
 .m-lable {
   font-weight: 500;
+  color: #0A0A0A;
 }
 
 .p-modal {
@@ -1056,6 +1092,7 @@ button:focus, button:hover {
   border: 1px dashed var(--black-dim);
   border-radius: 7px;
   cursor: pointer;
+  width: fit-content;
 }
 
 .img-here {
@@ -1076,6 +1113,21 @@ button:focus, button:hover {
   object-fit: contain;
 }
 
+.payment-smry {
+  padding: 15px;
+}
+
+.payment-smry p {
+  font-size: var(--font-16);
+}
+
+.h-modal-footer {
+    height: 150px;
+}
+
+#manage-product .m-lable {
+  font-size: 16px;
+}
 /*.modal {
   display: flex;
   align-items: center;
@@ -1104,9 +1156,7 @@ button:focus, button:hover {
   }
   .more-btns .bt-md {
     font-size: var(--font-18);
-    width: auto;
     padding: 10px 10px;
-    font-size: var(--font-18);
   }
 }
 @media (max-width: 1366px) {
@@ -1131,7 +1181,7 @@ button:focus, button:hover {
   }
   .bt-md {
     font-size: var(--font-14) !important;
-    padding: 5px 8px;
+    padding: 5px 23px;
     font-weight: 500;
   }
 
@@ -1202,9 +1252,44 @@ button:focus, button:hover {
     height: 100%;
   }
 }
+
+@media(max-width: 991px)
+{
+  .lg-title {
+    font-size: 30px;
+  }
+
+  .bt-sm {
+    font-size: var(--font-14);
+  }
+
+  #manage-product .m-lable {
+    font-size: 14px;
+  }
+
+  .sm-start {
+    align-items: flex-start;
+  }
+
+  .radio-bl .radio-label, .payment-smry p {
+    font-size: 14px;
+  }
+
+  .payment-smry {
+    margin-top: 30px;
+  }
+
+  .h-modal-footer {
+    height: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .product-listing .col {
     width: 50%;
+  }
+  .p-modal {
+    padding: 20px 10px;
   }
   .custom-p {
     padding: 40px 20px;
@@ -1240,4 +1325,8 @@ button:focus, button:hover {
   .btn-navy {
     font-size: var(--font-12);
   }
+  .sm-col {
+    flex-direction: column;
+  }
+  
 }

@@ -177,8 +177,8 @@
                                         placeholder="Product name, Barcode, Item code">
                                 </div>
                                 <button type="button" class="btn bg-light-gray align-center ds-flex" data-toggle="modal"
-                                    data-target="#myModal"><img src="assets/img/icon-add.svg" class="mr-3">Add
-                                    Prodcut</button>
+                                    data-target="#modal-product"><img src="assets/img/icon-add.svg" class="mr-3">Add
+                                    Product</button>
                             </div>
                             <!--------------------------product listing----------------------------------->
                             <div class="product-listing mt-6 pt-2 customs-scroll">
@@ -466,12 +466,12 @@
                                     <label class="custom-radio mr-2">
                                         <input type="radio" name="radio-group">
                                         <span class="radio-circle"></span>
-                                        <span class="radio-label">Cash Invoice</span>
+                                        <span class="radio-label font-16">Cash Invoice</span>
                                     </label>
                                     <label class="custom-radio ml-5">
                                         <input type="radio" name="radio-group">
                                         <span class="radio-circle"></span>
-                                        <span class="radio-label">Credit Invoice</span>
+                                        <span class="radio-label font-16 ">Credit Invoice</span>
                                     </label>
                                 </div>
                             </div>
@@ -716,7 +716,7 @@
                                                     class="btn bg-white b-red-btn bt-md mr-4 w-100">Clear
                                                     All</button>
                                                 <button type="button"
-                                                    class="btn bg-white bg-pr-dark bt-md ml-4 w-100 text-white">Checkout</button>
+                                                    class="btn bg-white bg-pr-dark bt-md ml-4 w-100 text-white" data-toggle="modal" data-target="#checkout">Checkout</button>
                                             </div>
                                         </div>
                                     </div>
@@ -897,11 +897,11 @@
 
     </script>
     <!-- Modal add product-->
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="modal-product" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-center" id="dropZone">
             <div class="modal-content  p-modal">
                 <div class="modal-header border-none-b">
-                    <div class="ds-flex-between align-center">
+                    <div class="ds-flex-between align-center sm-col sm-start">
                         <div class="modal-tl">
                             <h2 class="lg-title bold pt-0">New Product</h2>
                             <h5 class="dim-title">Create New Product For your system</h5>
@@ -1044,15 +1044,204 @@
                     <div class="mt-6 ds-flex-end">
                         <button type="button" class="btn bt-sm text-pr-dark bg-white"
                             data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4"
-                            data-dismiss="modal">Create</button>
+                        <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal"
+                            data-toggle="modal" data-target="#manage-product">Create</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
+<!-- Modal manage product-->
+<div class="modal fade" id="manage-product" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content p-modal">
+        <div class="modal-header border-none-b">
+          <div class="modal-tl">
+                <h2 class="lg-title bold pt-0">Manage Product</h2>
+                <h4 class="semi-bold text-black mt-6 pt-5"><span class="regular">Product Name :</span> Casual Texture of Relaxed Shirt</h4>
+             </div>
+            </div>
+        <div class="modal-body pt-3">
+            <div class="row">
+                <div class="col-sm-6 mb-6">
+                    <label class="m-lable">Tax Type</label>
+                    <select name="t-type" id="t-type"
+                        class="theme-select theme-select-modal ds-block w-100">
+                        <option value="1">Exclusive</option>
+                        <option value="2">Demo</option>
+                        <option value="3">Demo</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 mb-6">
+                    <label class="m-lable">Store Name</label>
+                    <select name="tax" id="tax-modal"
+                        class="theme-select theme-select-modal ds-block w-100">
+                        <option value="1">Tax</option>
+                        <option value="2">Demo</option>
+                        <option value="3">Demo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 mb-6">
+                    <label class="m-lable">Discount Type</label>
+                    <select name="d-type" id="d-type"
+                        class="theme-select theme-select-modal ds-block w-100">
+                        <option value="1">Fixed</option>
+                        <option value="2">Demo</option>
+                        <option value="3">Demo</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 mb-6">
+                    <label class="m-lable">Discount %</label>
+                    <div class="input-group">
+                        <input id="profit-margin" type="text"
+                            class="form-control border-light custom-input-text border-none-r"
+                            name="profit-margin" placeholder="Discount %">
+                        <span class="input-group-addon bg-white border-none-l border-light">SAR</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 mb-6">
+                    <label class="m-lable">Discerption</label>
+                    <textarea class="form-control" rows="4" id="description" placeholder="Casual Texture of Relaxed Shirt"></textarea>
+                </div>
+            </div>
+            <div class="mt-6 ds-flex-end">
+                <button type="button" class="btn bt-sm text-pr-dark bg-white"
+                    data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal"
+                    data-toggle="modal" data-target="#manage-product">Create</button>
+            </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+<!-- Modal checkout-->
+  <div class="modal fade" id="checkout" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content p-modal">
+        <div class="modal-header border-none-b">
+          <div class="modal-tl">
+                <h2 class="lg-title bold pt-0">Payment Method</h2>
+            
+             </div>
+            </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+                <h4 class="dim-title">Select your Method to pay</h4>
+                <div class="mt-6">
+                    <label class="d-block mb-3 medium">Customer selection</label>
+                 <div class="ds-flex">
+                  <select name="store-name" id="store-name"
+                    class="theme-select theme-select-modal ds-block w-100">
+                    <option value="1">Ahmed Elsayed</option>
+                    <option value="2">Demo</option>
+                    <option value="3">Demo</option>
+                </select>
+                <button type="button" class="btn bg-navy align-center ds-flex text-white ml-4" data-toggle="modal"
+                data-target="#modal-product">
+                <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-3">
+                    <path d="M9.82465 6.37632V13.6597M6.18296 10.018H13.4663M6.00088 18.2118H13.6484C15.1781 18.2118 15.9429 18.2118 16.5271 17.9141C17.0411 17.6522 17.4589 17.2344 17.7207 16.7205C18.0184 16.1362 18.0184 15.3714 18.0184 13.8418V6.19424C18.0184 4.66459 18.0184 3.89976 17.7207 3.31551C17.4589 2.80159 17.0411 2.38376 16.5271 2.12191C15.9429 1.82422 15.1781 1.82422 13.6484 1.82422H6.00088C4.47123 1.82422 3.7064 1.82422 3.12215 2.12191C2.60823 2.38376 2.1904 2.80159 1.92855 3.31551C1.63086 3.89976 1.63086 4.66459 1.63086 6.19424V13.8418C1.63086 15.3714 1.63086 16.1362 1.92855 16.7205C2.1904 17.2344 2.60823 17.6522 3.12215 17.9141C3.7064 18.2118 4.47123 18.2118 6.00088 18.2118Z" stroke="#FFF" stroke-width="1.82084" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                Customer</button>
+                 </div> 
+                </div>
+                <div class="payment-selection">
+                 <label class="ds-block mb-3 medium mt-6">Payment Selection</label>
+                  <div class="radio-wrp mt-6">
+                    <label class="custom-radio mr-2 radio-bl ds-flex align-center ">
+                        <input type="radio" name="radio-group-payment">
+                        <span class="radio-circle"></span>
+                        <span class="radio-label ml-4">Cash on delivery</span>
+                    </label>
+                </div>
+                <div class="radio-wrp mt-6">
+                    <label class="custom-radio mr-2 radio-bl">
+                        <input type="radio" name="radio-group-payment">
+                        <span class="radio-circle"></span>
+                        <span class="radio-label ml-4">Banking Card</span>
+                    </label>
+                </div>
+                <div class="radio-wrp mt-6">
+                    <label class="custom-radio mr-2 radio-bl">
+                        <input type="radio" name="radio-group-payment">
+                        <span class="radio-circle"></span>
+                        <span class="radio-label ml-4">Bank Transfer</span>
+                    </label>
+                </div>
+                <div class="radio-wrp mt-6">
+                    <label class="custom-radio mr-2 radio-bl">
+                        <input type="radio" name="radio-group-payment">
+                        <span class="radio-circle"></span>
+                        <span class="radio-label ml-4">Multi  payment method</span>
+                    </label>
+                </div>
+                
+            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="payment-smry bg-gray-dim">
+                    <h4 class="text-black mb-3">Payment Summery</h4>
+                    <div class="ds-flex-between mt-6">
+                        <p>Items</p>
+                        <p>4 <span>(Items)</span></p>
+                    </div>
+                    <div class="ds-flex-between mt-3">
+                        <p>Subtotal</p>
+                        <p>100 <span>SAR</span></p>
+                    </div>
+                    <div class="ds-flex-between mt-3">
+                        <p>Tax</p>
+                        <p>20 <span>SAR</span></p>
+                    </div>
+                    <div class="ds-flex-between mt-3">
+                        <p>Shipping fees</p>
+                        <p>30 <span>SAR</span></p>
+                    </div>
+                    <div class="ds-flex-between mt-3">
+                        <h4 class="bold">Total</h4>
+                        <h4 class="bold">200.00 <span>SAR</span></h4>
+                    </div>
+                </div>
+                <div class="check ds-flex align-center mt-6">
+                    <input type="checkbox" id="send-voice" name="send-voice" value="send-voice" class="mt-0">
+                    <label for="send-voice" class="mb-0 regular ml-3"> Send Invoice to Customer Email</label>
+                </div>
+                <div class="mt-6 ds-flex-end h-modal-footer align-end">
+                    <button type="button" class="btn bt-md text-secondary bg-white border-none-all medium"
+                        data-dismiss="modal">Save</button>
+                    <button type="button" class="btn bg-secondary text-white ml-4 bt-md"
+                        data-dismiss="modal">Save & Print</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <script>
+    $(function() {
+        return $(".modal").on("show.bs.modal", function() {
+          var curModal;
+          curModal = this;
+          $(".modal").each(function() {
+            if (this !== curModal) {
+              $(this).modal("hide");
+            }
+          });
+        });
+      });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const browseImg = document.querySelector('.browse-img');
