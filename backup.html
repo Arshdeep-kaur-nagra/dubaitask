@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="">
         <!-------------------------Mobile nav--------------------------------------->
         <div class="row m-0">
             <div class="col-lg-12">
@@ -173,7 +173,7 @@
                                     <span class="input-group-addon bg-white border-none-r border-light"><img
                                             src="assets/img/icon-search.png"></span>
                                     <input id="search" type="search"
-                                        class="form-control border-none-l border-light custom-input-text h-48" name="search"
+                                        class="form-control border-none-l border-light custom-input-text" name="search"
                                         placeholder="Product name, Barcode, Item code">
                                 </div>
                                 <button type="button" class="btn bg-light-gray align-center ds-flex" data-toggle="modal"
@@ -462,7 +462,7 @@
                                         <option value="3">Demo</option>
                                     </select>
                                 </div>
-                                <div class="ds-flex flex-wrap align-center mb-5 pl-2">
+                                <div class="ds-flex flex-wrap align-center mb-5">
                                     <label class="custom-radio mr-2">
                                         <input type="radio" name="radio-group">
                                         <span class="radio-circle"></span>
@@ -681,7 +681,7 @@
                             <div class="cart-footer">
                                 <div class="row">
                                     <div class="col-sm-6 mb-sm-3">
-                                        <button class="btn bg-white ds-flex align-center bt-md semi-bold mt-custom" data-toggle="modal" data-target="#hold-invoice">
+                                        <button class="btn bg-white ds-flex align-center bt-md semi-bold mt-custom">
                                             <svg width="27" height="32" viewBox="0 0 27 32" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg" class="mr-3">
                                                 <path
@@ -690,7 +690,7 @@
                                                     stroke-linejoin="round" />
                                             </svg>
                                             Hold invoice</button>
-                                        <button class="btn bg-white ds-flex align-center bt-md semi-bold mt-6" data-toggle="modal" data-target="#edit-invoice-tc">
+                                        <button class="btn bg-white ds-flex align-center bt-md semi-bold mt-6">
                                             <svg width="25" height="31" viewBox="0 0 25 31" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg" class="mr-3">
                                                 <path
@@ -716,8 +716,7 @@
                                                     class="btn bg-white b-red-btn bt-md mr-4 w-100">Clear
                                                     All</button>
                                                 <button type="button"
-                                                    class="btn bg-white bg-pr-dark bt-md ml-4 w-100 text-white"
-                                                    data-toggle="modal" data-target="#checkout">Checkout</button>
+                                                    class="btn bg-white bg-pr-dark bt-md ml-4 w-100 text-white" data-toggle="modal" data-target="#checkout">Checkout</button>
                                             </div>
                                         </div>
                                     </div>
@@ -732,221 +731,105 @@
 
 
 
-    <!-- Modal manage product-->
-    <div class="modal fade" id="manage-product" role="dialog">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content p-modal">
-                <div class="modal-header border-none-b">
-                    <div class="modal-tl">
-                        <h2 class="lg-title bold pt-0">Manage Product</h2>
-                        <h4 class="semi-bold text-black mt-6 pt-5"><span class="regular">Product Name :</span> Casual
-                            Texture of Relaxed Shirt</h4>
-                    </div>
+<!-- Modal manage product-->
+<div class="modal fade" id="manage-product" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content p-modal">
+        <div class="modal-header border-none-b">
+          <div class="modal-tl">
+                <h2 class="lg-title bold pt-0">Manage Product</h2>
+                <h4 class="semi-bold text-black mt-6 pt-5"><span class="regular">Product Name :</span> Casual Texture of Relaxed Shirt</h4>
+             </div>
+            </div>
+        <div class="modal-body pt-3">
+            <div class="row">
+                <div class="col-sm-6 mb-6">
+                    <label class="m-lable">Tax Type</label>
+                    <select name="t-type" id="t-type"
+                        class="theme-select theme-select-modal ds-block w-100">
+                        <option value="1">Exclusive</option>
+                        <option value="2">Demo</option>
+                        <option value="3">Demo</option>
+                    </select>
                 </div>
-                <div class="modal-body pt-3">
-                    <div class="row">
-                        <div class="col-sm-6 mb-6">
-                            <label class="m-lable">Tax Type</label>
-                            <select name="t-type" id="t-type" class="theme-select theme-select-modal ds-block w-100">
-                                <option value="1">Exclusive</option>
-                                <option value="2">Demo</option>
-                                <option value="3">Demo</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-6 mb-6">
-                            <label class="m-lable">Store Name</label>
-                            <select name="tax" id="tax-modal" class="theme-select theme-select-modal ds-block w-100">
-                                <option value="1">Tax</option>
-                                <option value="2">Demo</option>
-                                <option value="3">Demo</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 mb-6">
-                            <label class="m-lable">Discount Type</label>
-                            <select name="d-type" id="d-type" class="theme-select theme-select-modal ds-block w-100">
-                                <option value="1">Fixed</option>
-                                <option value="2">Demo</option>
-                                <option value="3">Demo</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-6 mb-6">
-                            <label class="m-lable">Discount %</label>
-                            <div class="input-group">
-                                <input id="profit-margin" type="text"
-                                    class="form-control border-light custom-input-text h-48 border-none-r"
-                                    name="profit-margin" placeholder="Discount %">
-                                <span class="input-group-addon bg-white border-none-l border-light">SAR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 mb-6">
-                            <label class="m-lable">Discerption</label>
-                            <textarea class="form-control" rows="4" id="description"
-                                placeholder="Casual Texture of Relaxed Shirt"></textarea>
-                        </div>
-                    </div>
-                    <div class="mt-6 ds-flex-end">
-                        <button type="button" class="btn bt-sm text-pr-dark bg-white"
-                            data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal"
-                            data-toggle="modal" data-target="#print">Create</button>
+                <div class="col-sm-6 mb-6">
+                    <label class="m-lable">Store Name</label>
+                    <select name="tax" id="tax-modal"
+                        class="theme-select theme-select-modal ds-block w-100">
+                        <option value="1">Tax</option>
+                        <option value="2">Demo</option>
+                        <option value="3">Demo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 mb-6">
+                    <label class="m-lable">Discount Type</label>
+                    <select name="d-type" id="d-type"
+                        class="theme-select theme-select-modal ds-block w-100">
+                        <option value="1">Fixed</option>
+                        <option value="2">Demo</option>
+                        <option value="3">Demo</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 mb-6">
+                    <label class="m-lable">Discount %</label>
+                    <div class="input-group">
+                        <input id="profit-margin" type="text"
+                            class="form-control border-light custom-input-text border-none-r"
+                            name="profit-margin" placeholder="Discount %">
+                        <span class="input-group-addon bg-white border-none-l border-light">SAR</span>
                     </div>
                 </div>
             </div>
-
-        </div>
-    </div>
-
-    <!-- Modal print-->
-    <div class="modal fade" id="print" role="dialog">
-        <div class="modal-dialog ">
-            <div class="modal-content p-modal-print">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <img src="assets/img/print.svg">
-                            <h2 class="semi-bold">Order Preparing for Print</h2>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-sm-12 mb-6">
+                    <label class="m-lable">Discerption</label>
+                    <textarea class="form-control" rows="4" id="description" placeholder="Casual Texture of Relaxed Shirt"></textarea>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Modal invoice list-->
-    <div class="modal fade" id="invoice-modal" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content p-modal">
-                <div class="modal-header border-none-b">
-                    <div class="modal-tl">
-                        <h2 class="bold pt-0">Invoice list</h2>
-                    </div>
-                </div>
-                <div class="modal-body mb-5">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <div class="cart-table  customs-scroll table-fix-h mb-5">
-                                <table id="myTable">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Date</th>
-                                        <th>Reference No.</th>
-                                        <th>Actions</th>
-                                    </tr>
-
-                                    <tr>
-                                        <td> 250</td>
-                                        <td> 27-10-24</td>
-                                        <td>
-                                            <span class="ds-flex-even align-center">
-                                                <span class="edit-ref" contenteditable="false">200</span>
-                                                <button class="btn edit-btn bg-none bt-xs"><img
-                                                        src="assets/img/icon-edit2.svg" class="img-18 mr-4"> Edit</button>
-                                                <button class="btn save-btn bg-pr-dark text-white bt-xs">Save</button>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="delete-btn btn bg-none text-red font-14"><img
-                                                    src="assets/img/icon-delete.png" class="mr-4 img-18">
-                                                Delete</button>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td> 250</td>
-                                        <td> 27-10-24</td>
-                                        <td>
-                                            <span class="ds-flex-even align-center">
-                                                <span class="edit-ref" contenteditable="false">200</span>
-                                                <button class="btn edit-btn bg-none bt-xs"><img
-                                                        src="assets/img/icon-edit2.svg" class="img-18 mr-4"> Edit</button>
-                                                <button class="btn save-btn bg-pr-dark text-white bt-xs">Save</button>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="delete-btn btn bg-none text-red font-14"><img
-                                                    src="assets/img/icon-delete.png" class="mr-4 img-18">
-                                                Delete</button>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td> 250</td>
-                                        <td> 27-10-24</td>
-                                        <td>
-                                            <span class="ds-flex-even align-center">
-                                                <span class="edit-ref" contenteditable="false">200</span>
-                                                <button class="btn edit-btn bg-none bt-xs"><img
-                                                        src="assets/img/icon-edit2.svg" class="img-18 mr-4"> Edit</button>
-                                                <button class="btn save-btn bg-pr-dark text-white bt-xs">Save</button>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="delete-btn btn bg-none text-red font-14"><img
-                                                    src="assets/img/icon-delete.png" class="mr-4 img-18">
-                                                Delete</button>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td> 250</td>
-                                        <td> 27-10-24</td>
-                                        <td>
-                                            <span class="ds-flex-even align-center">
-                                                <span class="edit-ref" contenteditable="false">200</span>
-                                                <button class="btn edit-btn bg-none bt-xs"><img
-                                                        src="assets/img/icon-edit2.svg" class="img-18 mr-4"> Edit</button>
-                                                <button class="btn save-btn bg-pr-dark text-white bt-xs">Save</button>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="delete-btn btn bg-none text-red font-14"><img
-                                                    src="assets/img/icon-delete.png" class="mr-4 img-18">
-                                                Delete</button>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td> 250</td>
-                                        <td> 27-10-24</td>
-                                        <td>
-                                            <span class="ds-flex-even align-center">
-                                                <span class="edit-ref" contenteditable="false">200</span>
-                                                <button class="btn edit-btn bg-none bt-xs"><img
-                                                        src="assets/img/icon-edit2.svg" class="img-18 mr-4"> Edit</button>
-                                                <button class="btn save-btn bg-pr-dark text-white bt-xs">Save</button>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="delete-btn btn bg-none text-red font-14"><img
-                                                    src="assets/img/icon-delete.png" class="mr-4 img-18">
-                                                Delete</button>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td> 250</td>
-                                        <td> 27-10-24</td>
-                                        <td>
-                                            <span class="ds-flex-even align-center">
-                                                <span class="edit-ref" contenteditable="false">200</span>
-                                                <button class="btn edit-btn bg-none bt-xs"><img
-                                                        src="assets/img/icon-edit2.svg" class="img-18 mr-4"> Edit</button>
-                                                <button class="btn save-btn bg-pr-dark text-white bt-xs">Save</button>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="delete-btn btn bg-none text-red font-14"><img
-                                                    src="assets/img/icon-delete.png" class="mr-4 img-18">
-                                                Delete</button>
-                                        </td>
-                                      </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="mt-6 ds-flex-end">
+                <button type="button" class="btn bt-sm text-pr-dark bg-white"
+                    data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal"
+                    data-toggle="modal" data-target="#print">Create</button>
             </div>
         </div>
+      </div>
+      
     </div>
+  </div>
+
+  <!-- Modal print-->
+<div class="modal fade" id="print" role="dialog">
+    <div class="modal-dialog ">
+      <div class="modal-content p-modal-print">
+        <div class="modal-body">
+           <div class="row">
+            <div class="col-lg-12 text-center">
+                <img src="assets/img/print.svg">
+                <h2 class="semi-bold">Order Preparing for Print</h2>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal invoice list-->
+  <div class="modal fade" id="invoice-modal" role="dialog">
+    <div class="modal-dialog ">
+      <div class="modal-content p-modal-print">
+        <div class="modal-body">
+           <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="semi-bold">Order Preparing for Print</h2>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
     <!-- Modal add product-->
     <div class="modal fade" id="modal-product" role="dialog">
@@ -979,7 +862,7 @@
                     <div class="row">
                         <div class="col-sm-6 mb-6">
                             <label class="m-lable">Product Name</label>
-                            <input id="p-name" type="text" class="form-control border-light custom-input-text h-48"
+                            <input id="p-name" type="text" class="form-control border-light custom-input-text"
                                 name="product-name" placeholder="Casual Texture of Relaxed Shirt">
                         </div>
                         <div class="col-sm-6 mb-6">
@@ -1012,7 +895,7 @@
                         </div>
                         <div class="col-sm-4 mb-6">
                             <label class="m-lable">Barcode</label>
-                            <input id="barcode" type="text" class="form-control border-light custom-input-text h-48"
+                            <input id="barcode" type="text" class="form-control border-light custom-input-text"
                                 name="barcode" placeholder="Barcode">
                         </div>
                     </div>
@@ -1035,7 +918,7 @@
                         </div>
                         <div class="col-sm-4 mb-6">
                             <label class="m-lable">Seller Point</label>
-                            <input id="seller-point" type="text" class="form-control border-light custom-input-text h-48"
+                            <input id="seller-point" type="text" class="form-control border-light custom-input-text"
                                 name="seller-point" placeholder="Seller point">
                         </div>
                     </div>
@@ -1045,7 +928,7 @@
                             <label class="m-lable">Price</label>
                             <div class="input-group">
                                 <input id="price" type="text"
-                                    class="form-control border-light custom-input-text h-48 border-none-r" name="Price"
+                                    class="form-control border-light custom-input-text border-none-r" name="Price"
                                     placeholder="Price">
                                 <span class="input-group-addon bg-white border-none-l border-light">SAR</span>
                             </div>
@@ -1073,7 +956,7 @@
                             <label class="m-lable">Sales Price*</label>
                             <div class="input-group">
                                 <input id="sales-price" type="text"
-                                    class="form-control border-light custom-input-text h-48 border-none-r" name="sales-price"
+                                    class="form-control border-light custom-input-text border-none-r" name="sales-price"
                                     placeholder="Sales Price">
                                 <span class="input-group-addon bg-white border-none-l border-light">SAR</span>
                             </div>
@@ -1082,617 +965,160 @@
                             <label class="m-lable">Profit Margin(%)</label>
                             <div class="input-group">
                                 <input id="profit-margin" type="text"
-                                    class="form-control border-light custom-input-text h-48 border-none-r"
+                                    class="form-control border-light custom-input-text border-none-r"
                                     name="profit-margin" placeholder="Profit Margin">
                                 <span class="input-group-addon bg-white border-none-l border-light">SAR</span>
                             </div>
                         </div>
                         <div class="col-sm-4 mb-6">
                             <label class="m-lable">MRT</label>
-                            <input id="mrt" type="text" class="form-control border-light custom-input-text h-48" name="mrt"
+                            <input id="mrt" type="text" class="form-control border-light custom-input-text" name="mrt"
                                 placeholder="Maximum Retail Price">
                         </div>
                     </div>
                     <div class="mt-6 ds-flex-end">
-                        <button type="button" class="btn bt-sm text-pr-dark bg-white font-18"
+                        <button type="button" class="btn bt-sm text-pr-dark bg-white"
                             data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal font-18"
-                        data-dismiss="modal">Create</button>
+                        <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal"
+                            data-toggle="modal" data-target="#manage-product">Create</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Modal checkout-->
-    <div class="modal fade" id="checkout" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content p-modal">
-                <div class="modal-header border-none-b">
-                    <div class="modal-tl">
-                        <h2 class="lg-title bold pt-0">Payment Method</h2>
+<!-- Modal checkout-->
+  <div class="modal fade" id="checkout" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content p-modal">
+        <div class="modal-header border-none-b">
+          <div class="modal-tl">
+                <h2 class="lg-title bold pt-0">Payment Method</h2>
+            
+             </div>
+            </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+                <h4 class="dim-title">Select your Method to pay</h4>
+                <div class="mt-6">
+                    <label class="d-block mb-3 medium">Customer selection</label>
+                 <div class="ds-flex">
+                  <select name="store-name" id="store-name"
+                    class="theme-select theme-select-modal ds-block w-100">
+                    <option value="1">Ahmed Elsayed</option>
+                    <option value="2">Demo</option>
+                    <option value="3">Demo</option>
+                </select>
+                <button type="button" class="btn bg-navy align-center ds-flex text-white ml-4" data-toggle="modal"
+                data-target="#modal-product">
+                <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-3">
+                    <path d="M9.82465 6.37632V13.6597M6.18296 10.018H13.4663M6.00088 18.2118H13.6484C15.1781 18.2118 15.9429 18.2118 16.5271 17.9141C17.0411 17.6522 17.4589 17.2344 17.7207 16.7205C18.0184 16.1362 18.0184 15.3714 18.0184 13.8418V6.19424C18.0184 4.66459 18.0184 3.89976 17.7207 3.31551C17.4589 2.80159 17.0411 2.38376 16.5271 2.12191C15.9429 1.82422 15.1781 1.82422 13.6484 1.82422H6.00088C4.47123 1.82422 3.7064 1.82422 3.12215 2.12191C2.60823 2.38376 2.1904 2.80159 1.92855 3.31551C1.63086 3.89976 1.63086 4.66459 1.63086 6.19424V13.8418C1.63086 15.3714 1.63086 16.1362 1.92855 16.7205C2.1904 17.2344 2.60823 17.6522 3.12215 17.9141C3.7064 18.2118 4.47123 18.2118 6.00088 18.2118Z" stroke="#FFF" stroke-width="1.82084" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                Customer</button>
+                 </div> 
+                </div>
+                <div class="payment-selection">
+                 <label class="ds-block mb-3 medium mt-6">Payment Selection</label>
+                  <div class="radio-wrp mt-6">
+                    <label class="custom-radio mr-2 radio-bl ds-flex align-center ">
+                        <input type="radio" name="radio-group-payment">
+                        <span class="radio-circle"></span>
+                        <span class="radio-label ml-4">Cash on delivery</span>
+                    </label>
+                </div>
+                <div class="radio-wrp mt-6">
+                    <label class="custom-radio mr-2 radio-bl">
+                        <input type="radio" name="radio-group-payment">
+                        <span class="radio-circle"></span>
+                        <span class="radio-label ml-4">Banking Card</span>
+                    </label>
+                </div>
+                <div class="radio-wrp mt-6">
+                    <label class="custom-radio mr-2 radio-bl">
+                        <input type="radio" name="radio-group-payment">
+                        <span class="radio-circle"></span>
+                        <span class="radio-label ml-4">Bank Transfer</span>
+                    </label>
+                </div>
+                <div class="radio-wrp mt-6">
+                    <label class="custom-radio mr-2 radio-bl">
+                        <input type="radio" name="radio-group-payment">
+                        <span class="radio-circle"></span>
+                        <span class="radio-label ml-4">Multi  payment method</span>
+                    </label>
+                </div>
+                
+            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="payment-smry bg-gray-dim">
+                    <h4 class="text-black mb-3">Payment Summery</h4>
+                    <div class="ds-flex-between mt-6">
+                        <p>Items</p>
+                        <p>4 <span>(Items)</span></p>
+                    </div>
+                    <div class="ds-flex-between mt-3">
+                        <p>Subtotal</p>
+                        <p>100 <span>SAR</span></p>
+                    </div>
+                    <div class="ds-flex-between mt-3">
+                        <p>Tax</p>
+                        <p>20 <span>SAR</span></p>
+                    </div>
+                    <div class="ds-flex-between mt-3">
+                        <p>Shipping fees</p>
+                        <p>30 <span>SAR</span></p>
+                    </div>
+                    <div class="ds-flex-between mt-3">
+                        <h4 class="bold">Total</h4>
+                        <h4 class="bold">200.00 <span>SAR</span></h4>
                     </div>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4 class="dim-title">Select your Method to pay</h4>
-                            <div class="mt-6">
-                                <label class="d-block mb-3 medium">Customer selection</label>
-                                <div class="ds-flex">
-                                    <select name="store-name" id="store-name"
-                                        class="theme-select theme-select-modal ds-block w-100">
-                                        <option value="1">Ahmed Elsayed</option>
-                                        <option value="2">Demo</option>
-                                        <option value="3">Demo</option>
-                                    </select>
-                                    <button type="button" class="btn bg-navy align-center ds-flex text-white ml-4"
-                                        data-toggle="modal" data-target="#customer">
-                                        <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg" class="mr-3">
-                                            <path
-                                                d="M9.82465 6.37632V13.6597M6.18296 10.018H13.4663M6.00088 18.2118H13.6484C15.1781 18.2118 15.9429 18.2118 16.5271 17.9141C17.0411 17.6522 17.4589 17.2344 17.7207 16.7205C18.0184 16.1362 18.0184 15.3714 18.0184 13.8418V6.19424C18.0184 4.66459 18.0184 3.89976 17.7207 3.31551C17.4589 2.80159 17.0411 2.38376 16.5271 2.12191C15.9429 1.82422 15.1781 1.82422 13.6484 1.82422H6.00088C4.47123 1.82422 3.7064 1.82422 3.12215 2.12191C2.60823 2.38376 2.1904 2.80159 1.92855 3.31551C1.63086 3.89976 1.63086 4.66459 1.63086 6.19424V13.8418C1.63086 15.3714 1.63086 16.1362 1.92855 16.7205C2.1904 17.2344 2.60823 17.6522 3.12215 17.9141C3.7064 18.2118 4.47123 18.2118 6.00088 18.2118Z"
-                                                stroke="#FFF" stroke-width="1.82084" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                        Customer</button>
-                                </div>
-                            </div>
-                            <div class="payment-selection">
-                                <label class="ds-block mb-3 medium mt-6">Payment Selection</label>
-                                <div class="radio-wrp mt-6">
-                                    <label class="custom-radio mr-2 radio-bl ds-flex align-center ">
-                                        <input type="radio" name="radio-group-payment">
-                                        <span class="radio-circle"></span>
-                                        <span class="radio-label ml-4">Cash on delivery</span>
-                                    </label>
-                                </div>
-                                <div class="radio-wrp mt-6">
-                                    <label class="custom-radio mr-2 radio-bl">
-                                        <input type="radio" name="radio-group-payment">
-                                        <span class="radio-circle"></span>
-                                        <span class="radio-label ml-4">Banking Card</span>
-                                    </label>
-                                </div>
-                                <div class="radio-wrp mt-6">
-                                    <label class="custom-radio mr-2 radio-bl">
-                                        <input type="radio" name="radio-group-payment">
-                                        <span class="radio-circle"></span>
-                                        <span class="radio-label ml-4">Bank Transfer</span>
-                                    </label>
-                                </div>
-                                <div class="radio-wrp mt-6">
-                                    <label class="custom-radio mr-2 radio-bl">
-                                        <input type="radio" name="radio-group-payment">
-                                        <span class="radio-circle"></span>
-                                        <span class="radio-label ml-4">Multi payment method</span>
-                                    </label>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="payment-smry bg-gray-dim">
-                                <h4 class="text-black mb-3">Payment Summery</h4>
-                                <div class="ds-flex-between mt-6">
-                                    <p>Items</p>
-                                    <p>4 <span>(Items)</span></p>
-                                </div>
-                                <div class="ds-flex-between mt-3">
-                                    <p>Subtotal</p>
-                                    <p>100 <span>SAR</span></p>
-                                </div>
-                                <div class="ds-flex-between mt-3">
-                                    <p>Tax</p>
-                                    <p>20 <span>SAR</span></p>
-                                </div>
-                                <div class="ds-flex-between mt-3">
-                                    <p>Shipping fees</p>
-                                    <p>30 <span>SAR</span></p>
-                                </div>
-                                <div class="ds-flex-between mt-3">
-                                    <h4 class="bold">Total</h4>
-                                    <h4 class="bold">200.00 <span>SAR</span></h4>
-                                </div>
-                            </div>
-                            <div class="check ds-flex align-center mt-6">
-                                <input type="checkbox" id="send-voice" name="send-voice" value="send-voice"
-                                    class="mt-0">
-                                <label for="send-voice" class="mb-0 regular ml-3"> Send Invoice to Customer
-                                    Email</label>
-                            </div>
-                            <div class="mt-6 ds-flex-end h-modal-footer align-end">
-                                <button type="button" class="btn bt-md text-secondary bg-white border-none-all medium"
-                                    data-dismiss="modal">Save</button>
-                                <button type="button" class="btn bg-secondary text-white ml-4 bt-md"
-                                data-toggle="modal" data-target="#print">Save & Print</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="check ds-flex align-center mt-6">
+                    <input type="checkbox" id="send-voice" name="send-voice" value="send-voice" class="mt-0">
+                    <label for="send-voice" class="mb-0 regular ml-3"> Send Invoice to Customer Email</label>
+                </div>
+                <div class="mt-6 ds-flex-end h-modal-footer align-end">
+                    <button type="button" class="btn bt-md text-secondary bg-white border-none-all medium"
+                        data-dismiss="modal">Save</button>
+                    <button type="button" class="btn bg-secondary text-white ml-4 bt-md"
+                        data-dismiss="modal">Save & Print</button>
                 </div>
             </div>
-
+          </div>
         </div>
+      </div>
+      
     </div>
-<!-- Modal customer info-->
-<div class="modal fade" id="customer" role="dialog">
-    <div class="modal-dialog modal-wider">
-        <div class="modal-content p-modal">
-            <div class="modal-header border-none-b">
-                <div class="modal-tl">
-                    <h2 class="lg-title bold pt-0">Customer Info</h2>
-                </div>
-            </div>
-            <div class="modal-body pt-0">
-                <div class="row">
-                    <div class="col-md-5">
-                        <h4 class="medium text-black mb-6 mt-6">Customer Info</h4>
-                        <div class="input-wrp">
-                            <label class="m-lable mb-2">Full Name*</label>
-                            <input id="full-name" type="text" class="form-control border-light custom-input-text h-48"
-                                name="full-name" placeholder="Full Name">
-                        </div>  
-                        <div class="input-wrp">
-                            <label class="m-lable mb-2">Phone Number*</label>
-                            <div class="input-group mr-5">
-                                <span class="input-group-addon bg-white border-none-r border-light">
-                                    <select class="w-50px">
-                                        <option value="AF">Afghanistan</option>
-                                            <option value="AL">Albania</option>
-                                            <option value="DZ">Algeria</option>
-                                            <option value="AS">American Samoa</option>
-                                            <option value="AD">Andorra</option>
-                                            <option value="AO">Angola</option>
-                                            <option value="AI">Anguilla</option>
-                                            <option value="AQ">Antarctica</option>
-                                            <option value="AG">Antigua and Barbuda</option>
-                                            <option value="AR">Argentina</option>
-                                            <option value="AM">Armenia</option>
-                                            <option value="AW">Aruba</option>
-                                            <option value="AU">Australia</option>
-                                            <option value="AT">Austria</option>
-                                            <option value="AZ">Azerbaijan</option>
-                                            <option value="BS">Bahamas</option>
-                                            <option value="BH">Bahrain</option>
-                                            <option value="BD">Bangladesh</option>
-                                            <option value="BB">Barbados</option>
-                                            <option value="BY">Belarus</option>
-                                            <option value="BE">Belgium</option>
-                                            <option value="BZ">Belize</option>
-                                            <option value="BJ">Benin</option>
-                                            <option value="BM">Bermuda</option>
-                                            <option value="BT">Bhutan</option>
-                                            <option value="BO">Bolivia</option>
-                                            <option value="BA">Bosnia and Herzegovina</option>
-                                            <option value="BW">Botswana</option>
-                                            <option value="BV">Bouvet Island</option>
-                                            <option value="BR">Brazil</option>
-                                            <option value="IO">British Indian Ocean Territory</option>
-                                            <option value="BN">Brunei Darussalam</option>
-                                            <option value="BG">Bulgaria</option>
-                                            <option value="BF">Burkina Faso</option>
-                                            <option value="BI">Burundi</option>
-                                            <option value="KH">Cambodia</option>
-                                            <option value="CM">Cameroon</option>
-                                            <option value="CA">Canada</option>
-                                            <option value="CV">Cape Verde</option>
-                                            <option value="KY">Cayman Islands</option>
-                                            <option value="CF">Central African Republic</option>
-                                            <option value="TD">Chad</option>
-                                            <option value="CL">Chile</option>
-                                            <option value="CN">China</option>
-                                            <option value="CX">Christmas Island</option>
-                                            <option value="CC">Cocos (Keeling) Islands</option>
-                                            <option value="CO">Colombia</option>
-                                            <option value="KM">Comoros</option>
-                                            <option value="CG">Congo</option>
-                                            <option value="CD">Congo, the Democratic Republic of the</option>
-                                            <option value="CK">Cook Islands</option>
-                                            <option value="CR">Costa Rica</option>
-                                            <option value="CI">Cote D'Ivoire</option>
-                                            <option value="HR">Croatia</option>
-                                            <option value="CU">Cuba</option>
-                                            <option value="CY">Cyprus</option>
-                                            <option value="CZ">Czech Republic</option>
-                                            <option value="DK">Denmark</option>
-                                            <option value="DJ">Djibouti</option>
-                                            <option value="DM">Dominica</option>
-                                            <option value="DO">Dominican Republic</option>
-                                            <option value="EC">Ecuador</option>
-                                            <option value="EG">Egypt</option>
-                                            <option value="SV">El Salvador</option>
-                                            <option value="GQ">Equatorial Guinea</option>
-                                            <option value="ER">Eritrea</option>
-                                            <option value="EE">Estonia</option>
-                                            <option value="ET">Ethiopia</option>
-                                            <option value="FK">Falkland Islands (Malvinas)</option>
-                                            <option value="FO">Faroe Islands</option>
-                                            <option value="FJ">Fiji</option>
-                                            <option value="FI">Finland</option>
-                                            <option value="FR">France</option>
-                                            <option value="GF">French Guiana</option>
-                                            <option value="PF">French Polynesia</option>
-                                            <option value="TF">French Southern Territories</option>
-                                            <option value="GA">Gabon</option>
-                                            <option value="GM">Gambia</option>
-                                            <option value="GE">Georgia</option>
-                                            <option value="DE">Germany</option>
-                                            <option value="GH">Ghana</option>
-                                            <option value="GI">Gibraltar</option>
-                                            <option value="GR">Greece</option>
-                                            <option value="GL">Greenland</option>
-                                            <option value="GD">Grenada</option>
-                                            <option value="GP">Guadeloupe</option>
-                                            <option value="GU">Guam</option>
-                                            <option value="GT">Guatemala</option>
-                                            <option value="GN">Guinea</option>
-                                            <option value="GW">Guinea-Bissau</option>
-                                            <option value="GY">Guyana</option>
-                                            <option value="HT">Haiti</option>
-                                            <option value="HM">Heard Island and Mcdonald Islands</option>
-                                            <option value="VA">Holy See (Vatican City State)</option>
-                                            <option value="HN">Honduras</option>
-                                            <option value="HK">Hong Kong</option>
-                                            <option value="HU">Hungary</option>
-                                            <option value="IS">Iceland</option>
-                                            <option value="IN">India</option>
-                                            <option value="ID">Indonesia</option>
-                                            <option value="IR">Iran, Islamic Republic of</option>
-                                            <option value="IQ">Iraq</option>
-                                            <option value="IE">Ireland</option>
-                                            <option value="IL">Israel</option>
-                                            <option value="IT">Italy</option>
-                                            <option value="JM">Jamaica</option>
-                                            <option value="JP">Japan</option>
-                                            <option value="JO">Jordan</option>
-                                            <option value="KZ">Kazakhstan</option>
-                                            <option value="KE">Kenya</option>
-                                            <option value="KI">Kiribati</option>
-                                            <option value="KP">Korea, Democratic People's Republic of</option>
-                                            <option value="KR">Korea, Republic of</option>
-                                            <option value="KW">Kuwait</option>
-                                            <option value="KG">Kyrgyzstan</option>
-                                            <option value="LA">Lao People's Democratic Republic</option>
-                                            <option value="LV">Latvia</option>
-                                            <option value="LB">Lebanon</option>
-                                            <option value="LS">Lesotho</option>
-                                            <option value="LR">Liberia</option>
-                                            <option value="LY">Libya</option>
-                                            <option value="LI">Liechtenstein</option>
-                                            <option value="LT">Lithuania</option>
-                                            <option value="LU">Luxembourg</option>
-                                            <option value="MO">Macao</option>
-                                            <option value="MK">Macedonia, the Former Yugoslav Republic of</option>
-                                            <option value="MG">Madagascar</option>
-                                            <option value="MW">Malawi</option>
-                                            <option value="MY">Malaysia</option>
-                                            <option value="MV">Maldives</option>
-                                            <option value="ML">Mali</option>
-                                            <option value="MT">Malta</option>
-                                            <option value="MH">Marshall Islands</option>
-                                            <option value="MQ">Martinique</option>
-                                            <option value="MR">Mauritania</option>
-                                            <option value="MU">Mauritius</option>
-                                            <option value="YT">Mayotte</option>
-                                            <option value="MX">Mexico</option>
-                                            <option value="FM">Micronesia, Federated States of</option>
-                                            <option value="MD">Moldova, Republic of</option>
-                                            <option value="MC">Monaco</option>
-                                            <option value="MN">Mongolia</option>
-                                            <option value="MS">Montserrat</option>
-                                            <option value="MA">Morocco</option>
-                                            <option value="MZ">Mozambique</option>
-                                            <option value="MM">Myanmar</option>
-                                            <option value="NA">Namibia</option>
-                                            <option value="NR">Nauru</option>
-                                            <option value="NP">Nepal</option>
-                                            <option value="NL">Netherlands</option>
-                                            <option value="NC">New Caledonia</option>
-                                            <option value="NZ">New Zealand</option>
-                                            <option value="NI">Nicaragua</option>
-                                            <option value="NE">Niger</option>
-                                            <option value="NG">Nigeria</option>
-                                            <option value="NU">Niue</option>
-                                            <option value="NF">Norfolk Island</option>
-                                            <option value="MP">Northern Mariana Islands</option>
-                                            <option value="NO">Norway</option>
-                                            <option value="OM">Oman</option>
-                                            <option value="PK">Pakistan</option>
-                                            <option value="PW">Palau</option>
-                                            <option value="PS">Palestinian Territory, Occupied</option>
-                                            <option value="PA">Panama</option>
-                                            <option value="PG">Papua New Guinea</option>
-                                            <option value="PY">Paraguay</option>
-                                            <option value="PE">Peru</option>
-                                            <option value="PH">Philippines</option>
-                                            <option value="PN">Pitcairn</option>
-                                            <option value="PL">Poland</option>
-                                            <option value="PT">Portugal</option>
-                                            <option value="PR">Puerto Rico</option>
-                                            <option value="QA">Qatar</option>
-                                            <option value="RE">Reunion</option>
-                                            <option value="RO">Romania</option>
-                                            <option value="RU">Russian Federation</option>
-                                            <option value="RW">Rwanda</option>
-                                            <option value="SH">Saint Helena</option>
-                                            <option value="KN">Saint Kitts and Nevis</option>
-                                            <option value="LC">Saint Lucia</option>
-                                            <option value="PM">Saint Pierre and Miquelon</option>
-                                            <option value="VC">Saint Vincent and the Grenadines</option>
-                                            <option value="WS">Samoa</option>
-                                            <option value="SM">San Marino</option>
-                                            <option value="ST">Sao Tome and Principe</option>
-                                            <option value="SA">Saudi Arabia</option>
-                                            <option value="SN">Senegal</option>
-                                            <option value="CS">Serbia and Montenegro</option>
-                                            <option value="SC">Seychelles</option>
-                                            <option value="SL">Sierra Leone</option>
-                                            <option value="SG">Singapore</option>
-                                            <option value="SK">Slovakia</option>
-                                            <option value="SI">Slovenia</option>
-                                            <option value="SB">Solomon Islands</option>
-                                            <option value="SO">Somalia</option>
-                                            <option value="ZA">South Africa</option>
-                                            <option value="GS">South Georgia and the South Sandwich Islands</option>
-                                            <option value="ES">Spain</option>
-                                            <option value="LK">Sri Lanka</option>
-                                            <option value="SD">Sudan</option>
-                                            <option value="SR">Suriname</option>
-                                            <option value="SJ">Svalbard and Jan Mayen</option>
-                                            <option value="SZ">Swaziland</option>
-                                            <option value="SE">Sweden</option>
-                                            <option value="CH">Switzerland</option>
-                                            <option value="SY">Syrian Arab Republic</option>
-                                            <option value="TW">Taiwan, Province of China</option>
-                                            <option value="TJ">Tajikistan</option>
-                                            <option value="TZ">Tanzania, United Republic of</option>
-                                            <option value="TH">Thailand</option>
-                                            <option value="TL">Timor-Leste</option>
-                                            <option value="TG">Togo</option>
-                                            <option value="TK">Tokelau</option>
-                                            <option value="TO">Tonga</option>
-                                            <option value="TT">Trinidad and Tobago</option>
-                                            <option value="TN">Tunisia</option>
-                                            <option value="TR">Turkey</option>
-                                            <option value="TM">Turkmenistan</option>
-                                            <option value="TC">Turks and Caicos Islands</option>
-                                            <option value="TV">Tuvalu</option>
-                                            <option value="UG">Uganda</option>
-                                            <option value="UA">Ukraine</option>
-                                            <option value="AE">United Arab Emirates</option>
-                                            <option value="GB">United Kingdom</option>
-                                            <option value="US">United States</option>
-                                            <option value="UM">United States Minor Outlying Islands</option>
-                                            <option value="UY">Uruguay</option>
-                                            <option value="UZ">Uzbekistan</option>
-                                            <option value="VU">Vanuatu</option>
-                                            <option value="VE">Venezuela</option>
-                                            <option value="VN">Viet Nam</option>
-                                            <option value="VG">Virgin Islands, British</option>
-                                            <option value="VI">Virgin Islands, U.S.</option>
-                                            <option value="WF">Wallis and Futuna</option>
-                                            <option value="EH">Western Sahara</option>
-                                            <option value="YE">Yemen</option>
-                                            <option value="ZM">Zambia</option>
-                                            <option value="ZW">Zimbabwe</option>
-                                    </select>
-                                </span>
-                                <input id="phone" type="text"
-                                    class="form-control border-none-l border-light custom-input-text h-48" name="phone"
-                                    placeholder="Phone Number">
-                            </div>
-                        </div> 
-                        <div class="input-wrp mt-3">
-                            <label class="m-lable mb-2">Email*</label>
-                            <input id="full-name" type="email" class="form-control border-light custom-input-text h-48"
-                                name="email" placeholder="Email">
-                        </div>
-                    </div>
+  </div>
 
-                    <div class="col-md-7">
-                        <h4 class="medium text-black mb-6 mt-6">Shipping Address</h4>
-                        <div class="row1">
-                            <div class="col-md-81">
-                                <div class="input-wrp">
-                                    <label class="m-lable mb-2">Location Link <span class="regular text-dim">(Optional)</span></label>
-                                    <div class="input-group ">
-                                        <input id="location" type="text"
-                                            class="form-control border-light custom-input-text h-48 border-none-r"
-                                            name="location" placeholder="https://Google map link for location">
-                                       <span class=" input-group-addon bg-white border-none-l border-light addon-width"><button type="button" class="btn bg-primary text-white">Get Location</button></span> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="input-wrp">
-                                    <label class="m-lable">Country*</label>
-                                    <select name="country" id="country"
-                                        class="theme-select theme-select-modal ds-block w-100">
-                                        <option value="1">KSA</option>
-                                        <option value="2">Demo</option>
-                                        <option value="3">Demo</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="input-wrp">
-                                    <label class="m-lable">State*</label>
-                                    <select name="country" id="country"
-                                        class="theme-select theme-select-modal ds-block w-100">
-                                        <option value="1">Minya</option>
-                                        <option value="2">Demo</option>
-                                        <option value="3">Demo</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="input-wrp">
-                                    <label class="m-lable">City*</label>
-                                    <select name="state" id="state"
-                                        class="theme-select theme-select-modal ds-block w-100">
-                                        <option value="1">Minya</option>
-                                        <option value="2">Demo</option>
-                                        <option value="3">Demo</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                     <div class="row">
-                        <div class="col-md-8">
-                            <div class="input-wrp">
-                                <label class="m-lable mb-2">Address*</label>
-                                <input id="address" type="text" class="form-control border-light custom-input-text h-48"
-                                    name="address" placeholder="Address">
-                            </div> 
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="mt-6 ds-flex-end h-modal-footer align-end">
-                                <button type="button" class="btn bt-md text-secondary bg-white border-none-all medium"
-                                data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn bg-secondary text-white ml-4 bt-md"
-                                data-toggle="modal" data-target="#checkout">Create</button>
-                            </div>
-                        </div>
-                     </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal hold invoice-->
-<div class="modal fade" id="hold-invoice" role="dialog">
-    <div class="modal-dialog ">
-        <div class="modal-content p-modal">
-            <div class="modal-header border-none-b">
-                <div class="modal-tl">
-                    <h2 class="bold pt-0">Hold Invoice</h2>         
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-12 mb-6">
-                        <label class="m-lable mb-2 font-16 mb-4">Reference No</label>
-                        <input id="ref" type="text" class="h-56 form-control border-light custom-input-text"
-                            name="ref" placeholder="Enter reference No">
-                            <label class="text-dim regular mb-6 font-16 mt-2">If the same reference No exist will replace it</label>
-                            <div class="mt-6 ds-flex-center">
-                                <button type="button" class="btn bt-sm text-secondary bg-white font-16"
-                                    data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn bt-sm bg-secondary text-white ml-4 open-modal font-16"
-                                data-dismiss="modal">Save</button>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!----modal edit invoice T&C----->
-<div class="modal fade" id="edit-invoice-tc" role="dialog">
-    <div class="modal-dialog ">
-        <div class="modal-content p-modal">
-            <div class="modal-header border-none-b">
-                <div class="modal-tl">
-                    <h2 class="bold pt-0">Edit Invoice T&C</h2>         
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-12 mb-6">
-                        <label class="m-lable mb-2 font-16 mb-4">Invoice T&C</label>
-                        <textarea class="form-control" rows="6" id="description"
-                                placeholder="Enter Invoice terms and conditions "></textarea>
-                            <div class="mt-6 ds-flex-center">
-                                <button type="button" class="btn bt-sm text-secondary bg-white font-16"
-                                    data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn bt-sm bg-secondary text-white ml-4 open-modal font-16"
-                                data-dismiss="modal">Save</button>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!----modal item restore----->
-<div class="modal fade" id="restore" role="dialog">
-    <div class="modal-dialog ">
-        <div class="modal-content p-modal">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-12 mb-6 text-center">
-                        <img src="assets/img/warning-2.svg" class="d-block mb-6"><br>
-                        <label class="text-light regular mb-2 font-21 mb-4 d-block">You want to restore this items, are you sure?</label>
-                            <div class="mt-6 ds-flex-center">
-                                <button type="button" class="btn bt-sm text-secondary bg-white font-16"
-                                    data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn bt-sm bg-secondary text-white ml-4 open-modal font-16"
-                                data-dismiss="modal">Ok</button>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!------editable refernce number in invoice modal-------->
-    <script>
-        $(document).ready(function(){
-            $('.edit-btn').click(function(){
-                var parentTd = $(this).closest('td');
-                parentTd.find('.edit-ref').attr('contenteditable', 'true').css('border', '1px solid lightgray').focus();
-                $(this).hide();
-                parentTd.find('.save-btn').show();
-            });
-
-            $('.save-btn').click(function(){
-                var parentTd = $(this).closest('td');
-                parentTd.find('.edit-ref').attr('contenteditable', 'false').css('border', 'none');
-                $(this).hide();
-                parentTd.find('.edit-btn').show();
-            });
-
-            // Hide save buttons initially
-            $('.save-btn').hide();
+<!-- open modal after printing screen-->
+  <script>
+    $(document).ready(function(){
+      $('#print').on('shown.bs.modal', function () {
+        setTimeout(function(){
+          $('#invoice-modal').modal('show');
+        }, 7000);
+      });
+    });
+  </script>
+  
+<!-- hide old modal when new modal opened-->
+  <script>
+    $(function() {
+        return $(".modal").on("show.bs.modal", function() {
+          var curModal;
+          curModal = this;
+          $(".modal").each(function() {
+            if (this !== curModal) {
+              $(this).modal("hide");
+            }
+          });
         });
-    </script>
-    <!-- open modal after printing 
-    <script>
-        $(document).ready(function () {
-            $('#print').on('shown.bs.modal', function () {
-                setTimeout(function () {
-                    $('#invoice-modal').modal('show');
-                }, 2000);
-            });
-        });
-    </script>
-screen-->
-    <!-- hide old modal when new modal opened-->
-    <script>
-        $(function () {
-            return $(".modal").on("show.bs.modal", function () {
-                var curModal;
-                curModal = this;
-                $(".modal").each(function () {
-                    if (this !== curModal) {
-                        $(this).modal("hide");
-                    }
-                });
-            });
-        });
+      });
     </script>
 
-    <!-- show image in placeholder when selected-->
+<!-- show image in placeholder when selected-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const browseImg = document.querySelector('.browse-img');
@@ -1752,178 +1178,177 @@ screen-->
 
 
     </script>
-
+   
     <!-- active link in sidebar-->
-    <script>
-        $(document).ready(function () {
-            $("#menu a").click(function (e) {
-                e.preventDefault();
-                $("#menu a").removeClass("active");
-                $(this).closest("a").addClass("active");
+        <script>
+            $(document).ready(function () {
+                $("#menu a").click(function (e) {
+                    e.preventDefault();
+                    $("#menu a").removeClass("active");
+                    $(this).closest("a").addClass("active");
+                });
             });
-        });
-    </script>
-
+        </script>
+    
     <!-- remove table row (cart item) on click-->
-    <script>
-        const deleteButtons = document.querySelectorAll('#myTable .delete-btn');
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                let row = this.closest('tr');
-                row.classList.add('slide-up');
-                setTimeout(function () {
-                    row.remove();
-                }, 500);
+        <script>
+            const deleteButtons = document.querySelectorAll('#myTable .delete-btn');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    let row = this.closest('tr');
+                    row.classList.add('slide-up');
+                    setTimeout(function () {
+                        row.remove();
+                    }, 500);
+                });
             });
-        });
-    </script>
-
+        </script>
+    
     <!-- expand product list on click-->
-    <script>
-        $(document).ready(function () {
-            $('#expandButton').click(function () {
-                var $content = $('.my-content');
-
-                if ($content.hasClass('col-lg-6')) {
-                    // Slide animation
-                    $content.animate({
-                        width: '100%' // Expand to full width
-                    }, 500, function () {
-                        $content.removeClass('col-lg-6').addClass('col-lg-12');
-                        $('#expandButton').addClass('btn-small');
-                        $('#invoice-parent').addClass('hide-me');
-                        var cols = $('.col');
-                        cols.animate({ width: '20%' }, 300);
-                    });
-                } else {
-                    // Reverse animation
-                    $content.animate({
-                        width: '50%' // Contract to half width
-                    }, 500, function () {
-                        $content.removeClass('col-lg-12').addClass('col-lg-6');
-                        $('#expandButton').removeClass('btn-small');
-                        $('#invoice-parent').removeClass('hide-me');
-                        var cols = $('.col');
-                        cols.animate({ width: '25%' }, 300);
-                    });
-                }
+        <script>
+            $(document).ready(function () {
+                $('#expandButton').click(function () {
+                    var $content = $('.my-content');
+    
+                    if ($content.hasClass('col-lg-6')) {
+                        // Slide animation
+                        $content.animate({
+                            width: '100%' // Expand to full width
+                        }, 500, function () {
+                            $content.removeClass('col-lg-6').addClass('col-lg-12');
+                            $('#expandButton').addClass('btn-small');
+                            $('#invoice-parent').addClass('hide-me');
+                            var cols = $('.col');
+                            cols.animate({ width: '20%' }, 300);
+                        });
+                    } else {
+                        // Reverse animation
+                        $content.animate({
+                            width: '50%' // Contract to half width
+                        }, 500, function () {
+                            $content.removeClass('col-lg-12').addClass('col-lg-6');
+                            $('#expandButton').removeClass('btn-small');
+                            $('#invoice-parent').removeClass('hide-me');
+                            var cols = $('.col');
+                            cols.animate({ width: '25%' }, 300);
+                        });
+                    }
+                });
             });
-        });
-
-
-    </script>
-
+    
+    
+        </script>
+    
     <!-- increase decrease buttons and price calculation-->
-    <script>
-        $(document).ready(function () {
-            // Increase button click handler
-            var $priceValue = parseFloat($('.price').text());
-            $('.increment-btn').click(function () {
-
-                var $subTotalElement = $(this).closest('tr').find('.subtotal');
-                var currentPrice = parseFloat($subTotalElement.text());
-                var incrementAmount = $priceValue; // Customize this to your desired increment amount
-                var newValue = currentPrice + incrementAmount;
-                $subTotalElement.text(newValue.toFixed(2)); // Update price with 2 decimal places (if needed)
-            });
-
-            // Decrease button click handler
-            $('.decrement-btn').click(function () {
-
-                var $subTotalElement = $(this).closest('tr').find('.subtotal');
-                var currentPrice = parseFloat($subTotalElement.text());
-                var decrementAmount = $priceValue; // Customize this to your desired decrement amount
-                var newValue = currentPrice - decrementAmount;
-                if (newValue >= 0) {
+        <script>
+            $(document).ready(function () {
+                // Increase button click handler
+                var $priceValue = parseFloat($('.price').text());
+                $('.increment-btn').click(function () {
+    
+                    var $subTotalElement = $(this).closest('tr').find('.subtotal');
+                    var currentPrice = parseFloat($subTotalElement.text());
+                    var incrementAmount = $priceValue; // Customize this to your desired increment amount
+                    var newValue = currentPrice + incrementAmount;
                     $subTotalElement.text(newValue.toFixed(2)); // Update price with 2 decimal places (if needed)
-                }
+                });
+    
+                // Decrease button click handler
+                $('.decrement-btn').click(function () {
+    
+                    var $subTotalElement = $(this).closest('tr').find('.subtotal');
+                    var currentPrice = parseFloat($subTotalElement.text());
+                    var decrementAmount = $priceValue; // Customize this to your desired decrement amount
+                    var newValue = currentPrice - decrementAmount;
+                    if (newValue >= 0) {
+                        $subTotalElement.text(newValue.toFixed(2)); // Update price with 2 decimal places (if needed)
+                    }
+                });
             });
-        });
-
-
-
-    </script>
-
+    
+    
+    
+        </script>
+    
     <!-- subtotal calculations-->
-    <script>
-        function calculateTotal() {
-            var table = document.getElementById('myTable');
-            var total = 0;
-
-            for (var i = 0; i < table.rows.length; i++) {
-                var row = table.rows[i];
-                // Get the subtotal value from the 7th cell of each row (index 6)
-                var subtotalCell = row.cells[6];
-                if (subtotalCell) {
-                    var subtotalValue = parseFloat(subtotalCell.innerText);
-                    if (!isNaN(subtotalValue)) {
-                        total += subtotalValue;
+        <script>
+            function calculateTotal() {
+                var table = document.getElementById('myTable');
+                var total = 0;
+    
+                for (var i = 0; i < table.rows.length; i++) {
+                    var row = table.rows[i];
+                    // Get the subtotal value from the 7th cell of each row (index 6)
+                    var subtotalCell = row.cells[6];
+                    if (subtotalCell) {
+                        var subtotalValue = parseFloat(subtotalCell.innerText);
+                        if (!isNaN(subtotalValue)) {
+                            total += subtotalValue;
+                        }
                     }
                 }
+                document.getElementById('totalSubtotal').innerText = total;
             }
-            document.getElementById('totalSubtotal').innerText = total;
-        }
-
-        //  subtotalCell.addEventListener('input', ()=> calculateTotal());      
-        // Get all the increment and decrement buttons
-        const incrementButtons = document.querySelectorAll('.increment-btn');
-        const decrementButtons = document.querySelectorAll('.decrement-btn');
-
-        incrementButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const parent = button.parentNode;
-                const countSpan = parent.querySelector('.count');
-                let currentValue = parseInt(countSpan.textContent);
-                countSpan.textContent = currentValue + 1;
-                calculateTotal();
+    
+            //  subtotalCell.addEventListener('input', ()=> calculateTotal());      
+            // Get all the increment and decrement buttons
+            const incrementButtons = document.querySelectorAll('.increment-btn');
+            const decrementButtons = document.querySelectorAll('.decrement-btn');
+    
+            incrementButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const parent = button.parentNode;
+                    const countSpan = parent.querySelector('.count');
+                    let currentValue = parseInt(countSpan.textContent);
+                    countSpan.textContent = currentValue + 1;
+                    calculateTotal();
+                });
             });
-        });
-
-        // Attach click event listeners to each decrement button
-        decrementButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const parent = button.parentNode;
-                const countSpan = parent.querySelector('.count');
-                let currentValue = parseInt(countSpan.textContent);
-                // Ensure the count doesn't go below 0
-                if (currentValue > 0) {
-                    countSpan.textContent = currentValue - 1;
-                }
-                calculateTotal();
+    
+            // Attach click event listeners to each decrement button
+            decrementButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const parent = button.parentNode;
+                    const countSpan = parent.querySelector('.count');
+                    let currentValue = parseInt(countSpan.textContent);
+                    // Ensure the count doesn't go below 0
+                    if (currentValue > 0) {
+                        countSpan.textContent = currentValue - 1;
+                    }
+                    calculateTotal();
+                });
             });
-        });
-
-    </script>
-
+    
+        </script>
+    
     <!-- show-hide sidebar in mobile view-->
-
-    <script>
-        document.getElementById("openBtn").onclick = function () {
-            openNav();
-        };
-
-        document.getElementById("closeBtn").onclick = function () {
-            closeNav();
-        };
-
-        function openNav() {
-            document.getElementById("menu").style.width = "200px";
-            var element = document.getElementById("main-wrapper");
-            element.classList.add("main-wrapper-sm");
-        }
-
-        function closeNav() {
-            document.getElementById("menu").style.width = "0";
-            var element = document.getElementById("main-wrapper");
-            element.classList.remove("main-wrapper-sm");
-        };
-
-
-
-    </script>
-
-
+        <script>
+            document.getElementById("openBtn").onclick = function () {
+                openNav();
+            };
+    
+            document.getElementById("closeBtn").onclick = function () {
+                closeNav();
+            };
+    
+            function openNav() {
+                document.getElementById("menu").style.width = "200px";
+                var element = document.getElementById("main-wrapper");
+                element.classList.add("main-wrapper-sm");
+            }
+    
+            function closeNav() {
+                document.getElementById("menu").style.width = "0";
+                var element = document.getElementById("main-wrapper");
+                element.classList.remove("main-wrapper-sm");
+            };
+    
+    
+    
+        </script>
+      
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
-
 </html>
