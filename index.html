@@ -494,14 +494,14 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
                                         <td><span class="price">20.00</span>SAR</td>
                                         <td class="discount">0.00</td>
-                                        <td class="tax">1.00</td>
-                                        <td class="subtotal">0.00</td>
+                                        <td class="tax">0.00</td>
+                                        <td class="subtotal"></td>
                                         <td><button type="button" class="delete-btn btn bg-red"><img
                                                     src="assets/img/icon-delete.png"></button></td>
                                     </tr>
@@ -511,7 +511,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -528,7 +528,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -545,7 +545,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -562,7 +562,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -579,7 +579,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -596,7 +596,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -613,7 +613,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -630,7 +630,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -647,7 +647,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -664,7 +664,7 @@
                                         <td>
                                             <div class="btn-wrp">
                                                 <button class="btn bg-white border-pr-r decrement-btn">-</button>
-                                                <span class="value count">0</span>
+                                                <span class="value count">1</span>
                                                 <button class="btn bg-white border-pr-l increment-btn">+</button>
                                             </div>
                                         </td>
@@ -1813,18 +1813,17 @@ screen-->
 
     </script>
 
-    <!-- increase decrease buttons and price calculation-->
+    <!-- increase decrease buttons and price calculation--->
     <script>
         $(document).ready(function () {
             // Increase button click handler
             var $priceValue = parseFloat($('.price').text());
-            $('.increment-btn').click(function () {
-
+             $('.increment-btn').click(function () {
                 var $subTotalElement = $(this).closest('tr').find('.subtotal');
                 var currentPrice = parseFloat($subTotalElement.text());
-                var incrementAmount = $priceValue; // Customize this to your desired increment amount
+                var incrementAmount = $priceValue;
                 var newValue = currentPrice + incrementAmount;
-                $subTotalElement.text(newValue.toFixed(2)); // Update price with 2 decimal places (if needed)
+                $subTotalElement.text(newValue.toFixed(2));
             });
 
             // Decrease button click handler
@@ -1832,18 +1831,46 @@ screen-->
 
                 var $subTotalElement = $(this).closest('tr').find('.subtotal');
                 var currentPrice = parseFloat($subTotalElement.text());
-                var decrementAmount = $priceValue; // Customize this to your desired decrement amount
+                var decrementAmount = $priceValue;
                 var newValue = currentPrice - decrementAmount;
                 if (newValue >= 0) {
-                    $subTotalElement.text(newValue.toFixed(2)); // Update price with 2 decimal places (if needed)
+                    $subTotalElement.text(newValue.toFixed(2)); 
                 }
             });
         });
-
-
-
     </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const decrementBtn = document.querySelector('.decrement-btn');
+        const incrementBtn = document.querySelector('.increment-btn');
+        const countSpan = document.querySelector('.value.count');
+        const priceSpan = document.querySelector('.price');
+        const priceValue = parseFloat($('.price').text());
+
+        function updatePrice() {
+            const count = parseInt(countSpan.textContent, 10);
+            const totalPrice = (priceValue * count).toFixed(2);
+            priceSpan.textContent = totalPrice;
+        }
+
+        decrementBtn.addEventListener('click', () => {
+            let count = parseInt(countSpan.textContent, 10);
+                count--;
+                updatePrice();
+            
+        });
+
+        incrementBtn.addEventListener('click', () => {
+            let count = parseInt(countSpan.textContent, 10);
+            count++;
+            updatePrice();
+        });
+
+        // Initial price update in case the default count is different
+        updatePrice();
+    });
+</script>
     <!-- subtotal calculations-->
     <script>
         function calculateTotal() {
@@ -1864,8 +1891,7 @@ screen-->
             document.getElementById('totalSubtotal').innerText = total;
         }
 
-        //  subtotalCell.addEventListener('input', ()=> calculateTotal());      
-        // Get all the increment and decrement buttons
+     // Get all the increment and decrement buttons
         const incrementButtons = document.querySelectorAll('.increment-btn');
         const decrementButtons = document.querySelectorAll('.decrement-btn');
 
@@ -1886,10 +1912,11 @@ screen-->
                 const countSpan = parent.querySelector('.count');
                 let currentValue = parseInt(countSpan.textContent);
                 // Ensure the count doesn't go below 0
-                if (currentValue > 0) {
+                if (currentValue > 1) {
                     countSpan.textContent = currentValue - 1;
+                    calculateTotal();
                 }
-                calculateTotal();
+               
             });
         });
 
