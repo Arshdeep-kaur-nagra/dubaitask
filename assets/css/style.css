@@ -4,13 +4,13 @@
   --black-dim: #afb8c1;
   --red: #ed2121;
   --purple: #8250df;
-  --purple-dark: #512A97;
-  --primary: #218BFF;
-  --secondary: #0969DA;
+  --purple-dark: #512a97;
+  --primary: #218bff;
+  --secondary: #0969da;
   --gray: #f6f8fa;
   --light-gray: rgb(208, 215, 222, 0.7);
   --white: #fff;
-  --gray-dim: #F6F7FF;
+  --gray-dim: #f6f7ff;
   --navy: #002155;
   --blue: #218bff;
   --font-12: 12.52px;
@@ -398,9 +398,10 @@ html {
 
 /* buttons */
 
-.b-red-btn, .b-red-btn:hover {
-  border: 1px solid var(--red);
-  color: var(--red);
+.b-red-btn,
+.b-red-btn:hover {
+  border: 1px solid var(--red) !important;
+  color: var(--red) !important;
 }
 
 .btn-red {
@@ -440,7 +441,7 @@ html {
 }
 
 .bt-sm {
-  height:  40px;
+  height: 40px;
   padding: 5px 32px;
   font-weight: 500;
 }
@@ -451,14 +452,15 @@ html {
 }
 
 button {
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-button:focus, button:hover {
+button:focus,
+button:hover {
   box-shadow: none !important;
   outline: none !important;
-  opacity: .8;
-  transition: .3s ease-in-out;
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
 }
 
 /* colors */
@@ -597,17 +599,17 @@ button:focus, button:hover {
   font-family: poppins;
 }
 
-.radio-bl .radio-circle{
+.radio-bl .radio-circle {
   border: 1px solid var(--black);
 }
 
-.radio-bl .radio-label{
+.radio-bl .radio-label {
   font-weight: 600;
   font-size: var(--font-18);
 }
 
-.radio-bl .radio-circle{
-   top: 6px;
+.radio-bl .radio-circle {
+  top: 6px;
 }
 
 .theme-select {
@@ -669,7 +671,6 @@ button:focus, button:hover {
   display: flex;
   justify-content: space-between;
 }
-
 
 .ds-flex-even {
   display: flex;
@@ -828,7 +829,7 @@ button:focus, button:hover {
 }
 
 .ribbon-purple {
-  background-color: var(--primary);
+  background-color: var(--purple);
 }
 
 .ribbon-red {
@@ -873,10 +874,6 @@ button:focus, button:hover {
 
 .overflow-y-hidden {
   overflow-y: hidden;
-}
-
-.invoice h3 {
-  color: var(--primary);
 }
 
 .tag-invoice {
@@ -1102,7 +1099,7 @@ button:focus, button:hover {
 
 .m-lable {
   font-weight: 500;
-  color: #0A0A0A;
+  color: #0a0a0a;
 }
 
 .p-modal {
@@ -1144,7 +1141,7 @@ button:focus, button:hover {
 }
 
 .h-modal-footer {
-    height: 150px;
+  height: 150px;
 }
 
 #manage-product .m-lable {
@@ -1170,7 +1167,7 @@ button:focus, button:hover {
 
 .bt-xs {
   font-size: 13px;
-    padding: 4px 10px;
+  padding: 4px 10px;
 }
 
 .img-18 {
@@ -1185,21 +1182,21 @@ button:focus, button:hover {
   margin-top: 30px;
 }
 
-.modal-wider { 
-  width: 1200px; 
-  max-width:100%;
- }
+.modal-wider {
+  width: 1200px;
+  max-width: 100%;
+}
 
- .addon-width {
+.addon-width {
   width: 180px;
   text-align: right;
- }
+}
 
- .w-50px {
+.w-50px {
   width: 50px;
   border: none;
   border-right: 1px solid var(--light-gray);
- }
+}
 
 .w-50px:focus {
   box-shadow: none;
@@ -1207,22 +1204,21 @@ button:focus, button:hover {
   border: none;
 }
 
- .w-50px {
+.w-50px {
   width: 50px;
- }
+}
 
- select option:checked {
+select option:checked {
   background: linear-gradient(lightblue, lightblue) !important;
 }
 
 #noItemsMessage {
-    display: none;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    color: var(--black-dim);
+  display: none;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: var(--black-dim);
 }
-
 
 /*.modal {
   display: flex;
@@ -1285,9 +1281,9 @@ button:focus, button:hover {
     font-size: var(--font-14);
     width: -webkit-fill-available;
   }
-  .modal-wider { 
-    width: 900px; 
-   }
+  .modal-wider {
+    width: 900px;
+  }
 
   .sidebar {
     height: 100%;
@@ -1352,15 +1348,14 @@ button:focus, button:hover {
   }
 }
 
-@media(max-width: 991px)
-{
+@media (max-width: 991px) {
   .lg-title {
     font-size: 30px;
   }
 
-  .modal-wider { 
-    width: 600px; 
-   }
+  .modal-wider {
+    width: 600px;
+  }
 
   .bt-sm {
     font-size: var(--font-14);
@@ -1374,7 +1369,8 @@ button:focus, button:hover {
     align-items: flex-start;
   }
 
-  .radio-bl .radio-label, .payment-smry p {
+  .radio-bl .radio-label,
+  .payment-smry p {
     font-size: 14px;
   }
 
@@ -1390,6 +1386,14 @@ button:focus, button:hover {
 @media (max-width: 768px) {
   .product-listing .col {
     width: 50%;
+  }
+  .bt-md,
+  .more-btns .bt-md {
+    padding: 1px 10px;
+    height: 44px;
+  }
+  .bt-md svg {
+    width: 20px;
   }
   .p-modal {
     padding: 20px 10px;
@@ -1431,11 +1435,10 @@ button:focus, button:hover {
   .sm-col {
     flex-direction: column;
   }
-  .modal-wider { 
-    width: auto; 
-   }
-   .addon-width {
+  .modal-wider {
+    width: auto;
+  }
+  .addon-width {
     width: 150px;
-   }
-  
+  }
 }

@@ -20,8 +20,6 @@ $(document).ready(function(){
     $('.save-btn').hide();
 });
 
-
-
 // <!-- hide old modal when new modal opened-->
    
         $(function () {
@@ -36,7 +34,6 @@ $(document).ready(function(){
             });
         });
    
-
     // <!-- show image in placeholder when selected-->
    
         document.addEventListener('DOMContentLoaded', function () {
@@ -95,9 +92,6 @@ $(document).ready(function(){
             }
         });
 
-
-    
-
     // <!-- active link in sidebar-->
    
         $(document).ready(function () {
@@ -107,9 +101,6 @@ $(document).ready(function(){
                 $(this).closest("a").addClass("active");
             });
         });
-        
-
-    
 
     // <!-- expand product list on click-->
         $(document).ready(function () {
@@ -144,7 +135,7 @@ $(document).ready(function(){
 
          // Example data
          var data = [
-            { id: 1, name: "Casual Texture of Relaxed Shirt", stock: "20 (items)", price: "20.00", discount: "12.00", tax: "2.00", quantity: 2 },
+            { id: 1, name: "Casual Texture of Relaxed Shirt", stock: "20 (items)", price: "20.00", discount: "12.00", tax: "2.00", quantity: 1 },
             { id: 2, name: "Slim Fit Jeans", stock: "15 (items)", price: "30.00", discount: "0.00", tax: "0.00", quantity: 1 },
             { id: 3, name: "Leather Jacket", stock: "5 (items)", price: "100.00", discount: "0.00", tax: "0.00", quantity: 1 },
             { id: 4, name: "Sports Shoes", stock: "25 (items)", price: "60.00", discount: "0.00", tax: "0.00", quantity: 1 },
@@ -153,7 +144,7 @@ $(document).ready(function(){
             { id: 7, name: "Summer Hat", stock: "40 (items)", price: "12.00", discount: "0.00", tax: "0.00", quantity: 1 },
             { id: 8, name: "Denim Shorts", stock: "22 (items)", price: "18.00", discount: "0.00", tax: "0.00", quantity: 1 }
         ];
-
+        addProduct();
         // ----- modal total----------
         function calculateTotals() {
             let totalItems = 0;
@@ -166,8 +157,6 @@ $(document).ready(function(){
                 totalTax += parseFloat(item.tax) * item.quantity;
                 subtotal += (parseFloat(item.price) * item.quantity);
             });
-
-            
                   
             // Calculate the final total
             const finalTotal = subtotal + totalTax + shippingFees;
@@ -230,9 +219,6 @@ $(document).ready(function(){
                 updateTotalSubtotal();
                 
             }
-
-            
-            
     
             // Function to attach event listeners
             function attachEventListeners() { 
@@ -254,8 +240,6 @@ $(document).ready(function(){
                         updateTotalTax()
                     });
                 });
-
-
                 
             }
     
@@ -305,8 +289,6 @@ $(document).ready(function(){
         }
     
     
-    
-    
     // <!-- show-hide sidebar in mobile view-->
 
         document.getElementById("openBtn").onclick = function () {
@@ -344,9 +326,8 @@ $(document).ready(function(){
             }
             // Show the "No items to show" message
             document.getElementById('noItemsMessage').style.display = 'flex';
+            document.getElementById('totalSubtotal').innerHTML = 0;
         });
-        
-        
         
     // <!-- remove table row (cart item) on click-->
     document.addEventListener('DOMContentLoaded', function () {
@@ -376,5 +357,35 @@ $(document).ready(function(){
         });
     });
     
+// add new product 
 
-    
+function addProduct() {
+    const name = document.querySelector('input[name="product-name"]').value;
+    const quantity = document.querySelector('select[name="quantity"]').value;
+    const price = document.querySelector('input[name="Price"]').value;
+    const tax = document.querySelector('select[name="tax"]').value.split(' ')[0]; // get the numeric part
+    const id = data.length + 1;
+
+    const newProduct = {
+        id,
+        name,
+        stock: `${quantity} (items)`,
+        quantity: parseInt(quantity, 10),
+        price: "1000",
+        discount: "0.00", // assuming no discount is being applied here
+        tax,
+    };
+
+    data.push(newProduct);
+    document.getElementById('add-button').addEventListener('click', addProduct);
+    console.log(data);
+}
+ 
+// open modal after printing 
+$(document).ready(function () {
+    $('#print').on('shown.bs.modal', function () {
+        setTimeout(function () {
+            $('#invoice-modal').modal('show');
+        }, 5000);
+    });
+});
