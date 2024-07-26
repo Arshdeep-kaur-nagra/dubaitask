@@ -807,6 +807,9 @@ button:hover {
   width: 131px;
   height: 180px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-wrp img {
@@ -853,6 +856,7 @@ button:hover {
 .product-listing {
   height: 100%;
   overflow-y: scroll;
+  padding-bottom: 100px;
 }
 .product-listing-row {
   transition: all 0.3s ease-in-out;
