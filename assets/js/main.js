@@ -20,8 +20,6 @@ $(document).ready(function(){
     $('.save-btn').hide();
 });
 
-
-
 // <!-- hide old modal when new modal opened-->
    
         $(function () {
@@ -36,7 +34,6 @@ $(document).ready(function(){
             });
         });
    
-
     // <!-- show image in placeholder when selected-->
    
         document.addEventListener('DOMContentLoaded', function () {
@@ -95,9 +92,6 @@ $(document).ready(function(){
             }
         });
 
-
-    
-
     // <!-- active link in sidebar-->
    
         $(document).ready(function () {
@@ -107,9 +101,6 @@ $(document).ready(function(){
                 $(this).closest("a").addClass("active");
             });
         });
-        
-
-    
 
     // <!-- expand product list on click-->
         $(document).ready(function () {
@@ -144,7 +135,7 @@ $(document).ready(function(){
 
          // Example data
          var data = [
-            { id: 1, name: "Casual Texture of Relaxed Shirt", stock: "20 (items)", price: "20.00", discount: "12.00", tax: "2.00", quantity: 2 },
+            { id: 1, name: "Casual Texture of Relaxed Shirt", stock: "20 (items)", price: "20.00", discount: "12.00", tax: "2.00", quantity: 1 },
             { id: 2, name: "Slim Fit Jeans", stock: "15 (items)", price: "30.00", discount: "0.00", tax: "0.00", quantity: 1 },
             { id: 3, name: "Leather Jacket", stock: "5 (items)", price: "100.00", discount: "0.00", tax: "0.00", quantity: 1 },
             { id: 4, name: "Sports Shoes", stock: "25 (items)", price: "60.00", discount: "0.00", tax: "0.00", quantity: 1 },
@@ -153,7 +144,7 @@ $(document).ready(function(){
             { id: 7, name: "Summer Hat", stock: "40 (items)", price: "12.00", discount: "0.00", tax: "0.00", quantity: 1 },
             { id: 8, name: "Denim Shorts", stock: "22 (items)", price: "18.00", discount: "0.00", tax: "0.00", quantity: 1 }
         ];
-
+        
         // ----- modal total----------
         function calculateTotals() {
             let totalItems = 0;
@@ -166,8 +157,6 @@ $(document).ready(function(){
                 totalTax += parseFloat(item.tax) * item.quantity;
                 subtotal += (parseFloat(item.price) * item.quantity);
             });
-
-            
                   
             // Calculate the final total
             const finalTotal = subtotal + totalTax + shippingFees;
@@ -178,6 +167,78 @@ $(document).ready(function(){
 
         document.addEventListener('DOMContentLoaded', calculateTotals)
 
+
+        function generateProducts(data) {
+            // Get the container where the products will be appended
+            const container = document.getElementById('product-container');
+            if (!container) {
+                console.error('Container element not found');
+                return;
+            }
+            container.innerHTML = '';
+        
+            data.forEach(item => {
+                const col = document.createElement('div');
+                col.classList.add("col");
+                col.innerHTML = `
+                    <div class="listing-wrp">
+                        <div class="img-wrp bg-white flex-center">
+                            <div class="inner-wrp">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                        </div>
+                        <p class="bold mt-5 mb-1">${item.name}</p>
+                        <p class="p-price bold"><span class="mr-2"><s>${item.oldPrice} SAR</s></span> ${item.newPrice} SAR</p>
+                    </div>
+                `;
+                container.appendChild(col);
+            });
+        }
+        
+        const products = [
+            { name: "Essential Regular Fit Shirt 1", image: "assets/img/p1.png", oldPrice: "50.00", newPrice: "35.00" },
+            { name: "Slim Fit Jeans 2", image: "assets/img/p2.png", oldPrice: "60.00", newPrice: "45.00" },
+            { name: "Casual Trousers 3", image: "assets/img/p3.png", oldPrice: "70.00", newPrice: "55.00" },
+            { name: "Formal Suit 4", image: "assets/img/p2.png", oldPrice: "200.00", newPrice: "150.00" },
+            { name: "Leather Jacket 5", image: "assets/img/p3.png", oldPrice: "300.00", newPrice: "250.00" },
+            { name: "Sports Shoes 6", image: "assets/img/p2.png", oldPrice: "120.00", newPrice: "100.00" },
+            { name: "Running Shoes 7", image: "assets/img/p1.png", oldPrice: "130.00", newPrice: "110.00" },
+            { name: "Casual Sneakers 8", image: "assets/img/p3.png", oldPrice: "140.00", newPrice: "115.00" },
+            { name: "Baseball Cap 9", image: "assets/img/p2.png", oldPrice: "20.00", newPrice: "15.00" },
+            { name: "Sunglasses 10", image: "assets/img/p1.png", oldPrice: "80.00", newPrice: "60.00" },
+            { name: "Wrist Watch 11", image: "assets/img/p3.png", oldPrice: "150.00", newPrice: "120.00" },
+            { name: "Leather Belt 12", image: "assets/img/p2.png", oldPrice: "40.00", newPrice: "30.00" },
+            { name: "Backpack 13", image: "assets/img/p1.png", oldPrice: "100.00", newPrice: "80.00" },
+            { name: "Laptop Bag 14", image: "assets/img/p2.png", oldPrice: "200.00", newPrice: "170.00" },
+            { name: "Travel Bag 15", image: "assets/img/p3.png", oldPrice: "250.00", newPrice: "220.00" },
+            { name: "Woolen Scarf 16", image: "assets/img/p1.png", oldPrice: "30.00", newPrice: "25.00" },
+            { name: "Winter Gloves 17", image: "assets/img/p3.png", oldPrice: "50.00", newPrice: "40.00" },
+            { name: "Beanie Hat 18", image: "assets/img/p2.png", oldPrice: "25.00", newPrice: "20.00" },
+            { name: "Formal Shoes 19", image: "assets/img/p1.png", oldPrice: "180.00", newPrice: "150.00" },
+            { name: "Casual Shoes 20", image: "assets/img/p2.png", oldPrice: "90.00", newPrice: "70.00" }
+        ];
+
+        document.getElementById('add-button').addEventListener('click', function() {
+            const productName = document.getElementById('p-name').value;
+            const price = document.getElementById('price').value;
+            const salesPrice = document.getElementById('sales-price').value;
+            const placeholderImg = document.getElementById('selectedImage');
+            const newProductImage = placeholderImg.src;
+                const newProduct = {
+                    name: productName,
+                    image: newProductImage , // or provide a way to upload an image
+                    oldPrice: price,
+                    newPrice: salesPrice
+                };
+        
+                products.push(newProduct);
+                console.log(products);
+                generateProducts(products);
+        });
+
+        generateProducts(products);
+        
+        
     // <!-- --- table data----- -->
         document.addEventListener('DOMContentLoaded', () => {
             const tableBody = document.querySelector('#myTable');
@@ -230,9 +291,6 @@ $(document).ready(function(){
                 updateTotalSubtotal();
                 
             }
-
-            
-            
     
             // Function to attach event listeners
             function attachEventListeners() { 
@@ -254,8 +312,6 @@ $(document).ready(function(){
                         updateTotalTax()
                     });
                 });
-
-
                 
             }
     
@@ -305,8 +361,6 @@ $(document).ready(function(){
         }
     
     
-    
-    
     // <!-- show-hide sidebar in mobile view-->
 
         document.getElementById("openBtn").onclick = function () {
@@ -344,9 +398,8 @@ $(document).ready(function(){
             }
             // Show the "No items to show" message
             document.getElementById('noItemsMessage').style.display = 'flex';
+            document.getElementById('totalSubtotal').innerHTML = 0;
         });
-        
-        
         
     // <!-- remove table row (cart item) on click-->
     document.addEventListener('DOMContentLoaded', function () {
@@ -376,5 +429,38 @@ $(document).ready(function(){
         });
     });
     
+// add new product 
 
-    
+function addProduct() {
+    const name = document.querySelector('input[name="product-name"]').value;
+    const quantity = document.querySelector('select[name="quantity"]').value;
+    const price = document.querySelector('input[name="Price"]').value;
+    const tax = document.querySelector('select[name="tax"]').value.split(' ')[0]; // get the numeric part
+    const id = data.length + 1;
+
+    const newProduct1 = {
+        id,
+        name,
+        stock: `${quantity} (items)`,
+        quantity: parseInt(quantity, 10),
+        price: "1000",
+        discount: "0.00", // assuming no discount is being applied here
+        tax,
+    };
+
+    data.push(newProduct);
+    document.getElementById('add-button').addEventListener('click', addProduct);
+    console.log(data);
+}
+ 
+// open modal after printing 
+$(document).ready(function () {
+    $('#print').on('shown.bs.modal', function () {
+        setTimeout(function () {
+            $('#invoice-modal').modal('show');
+        }, 5000);
+    });
+});
+
+
+
