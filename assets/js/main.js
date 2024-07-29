@@ -274,11 +274,6 @@ function generateProducts(data) {
                     </div>
                 `;
     container.appendChild(col);
-    document.querySelectorAll('.product-item').forEach(item => {
-        item.addEventListener('click', function() {
-            addProductToCart(this);
-        });
-    });
   });
 }
 
@@ -513,8 +508,8 @@ function attachEventListeners() {
 }
 // -----------------------------------------------------product add to cart---------------------------------------------
 function addProductToCart(productElement) {
-    const productName = productElement.querySelector(".item-name").textContent;
-    const productPrice = productElement.querySelector(".item-price").textContent;
+    const productName = productElement.querySelector('.item-name').textContent;
+    const productPrice = productElement.querySelector('.item-price').textContent;
 
     // Find existing product in data
     const existingProduct = data.find(product => product.name === productName);
@@ -542,11 +537,17 @@ function addProductToCart(productElement) {
     toast("cart-snack");
 }
 
-// Attach event listeners to product items
-document.querySelectorAll(".product-item").forEach(item => {
-    item.addEventListener("click", function() {
-        addProductToCart(this);
-    });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const productContainer = document.getElementById('product-container');
+    if (productContainer) {
+        productContainer.addEventListener('click', (event) => {
+            const productElement = event.target.closest('.product-item');
+            if (productElement) {
+                addProductToCart(productElement);
+            }
+        });
+    }
 });
 
 // <!-- --- ---------------------------------------------------- updating card on load------------------------------------------ -->
