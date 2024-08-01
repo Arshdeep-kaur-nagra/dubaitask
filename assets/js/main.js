@@ -580,6 +580,7 @@ document.getElementById("confirmDeleteBtn").addEventListener("click", function()
     document.getElementById("noItemsMessage").style.display = "flex";
     document.querySelector("#totalSubtotal").innerHTML = "0.00";
     document.querySelector("#total-items").innerHTML = "0";
+    document.querySelector(".total-items").innerHTML = "0";
     document.querySelector(".payment-subtotal").innerHTML = "0";
 });
 
