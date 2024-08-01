@@ -148,87 +148,26 @@ $(document).ready(function () {
 });
 
 // Example data for table
-var data = [
-  {
-    id: 1,
-    name: "Casual Texture of Relaxed Shirt",
-    stock: "20 (items)",
-    price: "20.00",
-    discount: "12.00",
-    tax: "2.00",
-    quantity: 1,
-  },
-  {
-    id: 2,
-    name: "Slim Fit Jeans",
-    stock: "15 (items)",
-    price: "30.00",
-    discount: "0.00",
-    tax: "0.00",
-    quantity: 1,
-  },
-  {
-    id: 3,
-    name: "Leather Jacket",
-    stock: "5 (items)",
-    price: "100.00",
-    discount: "0.00",
-    tax: "0.00",
-    quantity: 1,
-  },
-  {
-    id: 4,
-    name: "Sports Shoes",
-    stock: "25 (items)",
-    price: "60.00",
-    discount: "0.00",
-    tax: "0.00",
-    quantity: 1,
-  },
-  {
-    id: 5,
-    name: "Woolen Scarf",
-    stock: "30 (items)",
-    price: "15.00",
-    discount: "0.00",
-    tax: "0.00",
-    quantity: 1,
-  },
-  {
-    id: 6,
-    name: "Formal Shirt",
-    stock: "10 (items)",
-    price: "25.00",
-    discount: "0.00",
-    tax: "0.00",
-    quantity: 1,
-  },
-  {
-    id: 7,
-    name: "Summer Hat",
-    stock: "40 (items)",
-    price: "12.00",
-    discount: "0.00",
-    tax: "0.00",
-    quantity: 1,
-  },
-  {
-    id: 8,
-    name: "Denim Shorts",
-    stock: "22 (items)",
-    price: "18.00",
-    discount: "0.00",
-    tax: "0.00",
-    quantity: 1,
-  },
-];
+var data = [];
+
+// Function to check if the array is empty and display the message
+function checkIfArrayIsEmpty() {
+  if (data.length === 0) {
+    document.getElementById("noItemsMessage").style.display = "flex";
+    document.getElementById("myTable").style.display = "none";
+  } else {
+    document.getElementById("noItemsMessage").style.display = "none";
+    document.getElementById("myTable").style.display = "table";
+  }
+}
+checkIfArrayIsEmpty();
 
 // ----- -------------------------------------------------modal total----------------------------------------------------------------
 function calculateTotals() {
   let totalItems = 0;
   let totalTax = 0;
   let subtotal = 0;
-  const shippingFees = 30.0; // Assuming a fixed shipping fee
+  const shippingFees = 0.0; // Assuming a fixed shipping fee
 
   data.forEach((item) => {
     totalItems += item.quantity;
@@ -399,6 +338,10 @@ var products = [
     newPrice: "70.00",
   },
 ];
+
+
+// Call the function initially to set the display based on the array's initial state
+checkIfArrayIsEmpty();
 // ----------------------------------------------------- product from add product generation --------------------------------------------
 document.getElementById("add-button").addEventListener("click", function () {
   const productName = document.getElementById("p-name").value;
@@ -415,7 +358,7 @@ document.getElementById("add-button").addEventListener("click", function () {
 
   products.push(newProduct);
   generateProducts(products);
-  toast("snackbar")
+  toast("snackbar", `${productName} is added successfully`)
 });
 generateProducts(products);
 
@@ -441,7 +384,7 @@ function generateRows(data) {
   data.forEach((item) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-                    <td>${item.name}</td>
+                    <td class="row_item_name">${item.name}</td>
                     <td>${item.stock}</td>
                     <td>
                         <div class="btn-wrp">
@@ -529,12 +472,13 @@ function addProductToCart(productElement) {
             quantity: 1,
         };
         data.push(newProduct);
+        checkIfArrayIsEmpty();
     }
 
     generateRows(data);
     updateTotalSubtotal();
     updateTotalCount();
-    toast("cart-snack");
+    toast("cart-snack", `${productName} is added to cart`);
 }
 
 
@@ -615,21 +559,29 @@ function closeNav() {
 
 document.getElementById("clear-btn").addEventListener("click", function () {
   // Show the modal
-  $("#restore").modal("show");
+  if(data.length > 0){
+    $("#restore").modal("show");
+  }else{
+    toast("snackbar", "Add Items To Cart")
+  }
 });
 
-document
-  .getElementById("confirmDeleteBtn")
-  .addEventListener("click", function () {
-    // Delete all rows from the table
-    const table = document.getElementById("myTable");
-    while (table.rows.length > 0) {
-      table.deleteRow(0);
-    }
-    // Show the "No items to show" message
+
+document.getElementById("confirmDeleteBtn").addEventListener("click", function() {
+  // Clear the data array
+
+  data.splice(0, data.length);
+
+  // Call update functions
+  updateTotalSubtotal();
+    updateTotalCount();
+    calculateTotals();
+    checkIfArrayIsEmpty();
     document.getElementById("noItemsMessage").style.display = "flex";
-    document.getElementById("totalSubtotal").innerHTML = 0;
-  });
+    document.querySelector("#totalSubtotal").innerHTML = "0.00";
+    document.querySelector("#total-items").innerHTML = "0";
+    document.querySelector(".payment-subtotal").innerHTML = "0";
+});
 
 // <!-- delete table row (cart item) on click-->
 document.addEventListener("DOMContentLoaded", function () {
@@ -647,19 +599,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Confirm delete button
   document
-    .querySelector("#confirm-delete")
-    .addEventListener("click", function () {
-      if (rowToDelete) {
-        rowToDelete.classList.add("slide-up");
-        setTimeout(function () {
-          rowToDelete.remove();
-          updateTotalSubtotal();
-        }, 500);
+  .querySelector("#confirm-delete")
+  .addEventListener("click", function () {
+    if (rowToDelete) {
+      // Get the product name from the row to identify the product in the data array
+      const productName = rowToDelete.querySelector('.row_item_name').textContent.trim();
+      // Find the index of the product in the data array
+      const productIndex = data.findIndex(product => product.name === productName);
+
+      if (productIndex !== -1) {
+        // Remove the product from the data array
+        data.splice(productIndex, 1);
+      } else {
+        console.error("Product not found in data array");
       }
+
+      // Animate and remove the row from the DOM
+      rowToDelete.classList.add("slide-up");
+      setTimeout(function () {
+        rowToDelete.remove();
+        updateTotalSubtotal();
+        updateTotalCount()
+        calculateTotals();
+        checkIfArrayIsEmpty();
+      }, 500);
+
       $("#delete-row").modal("hide");
-      updateTotalSubtotal();
-      calculateTotals();
-    });
+    }
+  });
+
 });
 
 // open modal after printing
@@ -671,9 +639,10 @@ $(document).ready(function () {
   });
 });
 
-function toast(className){
+function toast(className, text){
     var x = document.getElementById(className);
     x.className = "show";
+    x.innerText = text
     setTimeout(function () {
       x.className = x.className.replace("show", "");
     }, 3000);
