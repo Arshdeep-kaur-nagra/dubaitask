@@ -504,6 +504,7 @@ function updateTotalCount() {
   });
   document.querySelector(".total-items").textContent = totalCount;
   document.querySelector("#total-items").textContent = totalCount;
+  document.querySelector(".total-items-mob").textContent = totalCount;
 }
 // --------------------------------------------------------------- total tax in rows ----------------------------------------------
 function updateTotalTax() {
@@ -581,6 +582,7 @@ document.getElementById("confirmDeleteBtn").addEventListener("click", function()
     document.querySelector("#totalSubtotal").innerHTML = "0.00";
     document.querySelector("#total-items").innerHTML = "0";
     document.querySelector(".total-items").innerHTML = "0";
+    document.querySelector(".total-items-mob").innerHTML = "0";
     document.querySelector(".payment-subtotal").innerHTML = "0";
 });
 
@@ -648,3 +650,4 @@ function toast(className, text){
       x.className = x.className.replace("show", "");
     }, 3000);
 }
+

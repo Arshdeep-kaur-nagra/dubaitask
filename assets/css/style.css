@@ -1265,6 +1265,18 @@ select option:checked {
   to {bottom: 0; opacity: 0;}
 }
 
+.cart-mobile img {
+  width: 26px;
+}
+
+.cart-mobile .tag{
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 14px;
+  height: 14px;
+}
+
 /*.modal {
   display: flex;
   align-items: center;
@@ -1304,6 +1316,9 @@ select option:checked {
 @media (max-width: 1200px) {
   .nav-mob {
     display: none;
+  }
+  #openBtn i{
+    font-size: 20px;
   }
   .tag-wrp .tag {
     top: -7px;
@@ -1489,4 +1504,64 @@ select option:checked {
   .addon-width {
     width: 150px;
   }
+  .theme-select, .bt-md, .more-btns .bt-md {
+    height: 36px;
+  }
+  .h-48 {
+    height: 39px;
+  }
+ .search-ic {
+  width: 15px;
+ }
+ .theme-select, .input-group .form-control, .btn, .product-item p, .radio-label {
+  font-size: 13px;
+ }
+ .warehouse {
+  width: 100%;
+ }
+ .cat, .brand {
+  width: 47%;
+  margin-top: 20px;
+ }
+ .d-small-wrap {
+  display: block;
+ }
+ h2 {
+  font-size: 26px;
+ }
+ h3 {
+  font-size: 20px;
+ }
+ h4 {
+  font-size: 16px;
+ }
+ .mt-custom {
+  margin-top: 10px;
+ }
+ .bill-details {
+  margin-top: 20px;
+ }
+ .mt-sm {
+  margin-top: 10px;
+ }
+ .details img {
+  width: 15px;
+ }
+ .lg-title {
+  font-size: 24px;
+}
+.product-listing, .cart-table {
+  height: 363px;
+}
+.get-link {
+  padding: 3px 12px;
+  height: 25px;
+}
+.logo-nav {
+  width: 35px;
+}
+#snackbar, #cart-snack {
+  font-size: 14px;
+}
+
 }

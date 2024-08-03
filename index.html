@@ -28,7 +28,13 @@
         <div class="row m-0">
             <div class="col-lg-12">
                 <div class="nav-mob ds-flex-between w-100 align-center">
+                   <div>
                     <a href="#"><img src="assets/img/logo.svg" class="logo-nav"></a>
+                    <a href="#scroll-to" class="cart-mobile p-relative pl-4" id="cart-mobile">
+                        <img src="assets/img/sales.svg" class="">
+                        <span class="tag  total-items-mob">2</span>
+                    </a>
+                    </div>
                     <button class="btn  bg-white" id="openBtn"><i class="fa fa-bars"></i></button>
                 </div>
             </div>
@@ -152,18 +158,18 @@
                     <!-----------------------main content left--------------------------->
                     <div class="col-lg-6 bg-gray custom-p overflow-y-hidden ht-100 my-content">
                         <div class="content-right-wrp ht-100">
-                            <div class="ds-flex-between product-nav">
-                                <select name="warehouse-name" id="warehouse" class="theme-select w-40 mr-5">
+                            <div class="ds-flex-between product-nav d-small-wrap">
+                                <select name="warehouse-name" id="warehouse" class="theme-select w-40 mr-5 warehouse">
                                     <option value="1">Warehouse Name</option>
                                     <option value="2">Demo</option>
                                     <option value="3">Demo</option>
                                 </select>
-                                <select name="category" id="category" class="theme-select w-26 mr-5">
+                                <select name="category" id="category" class="theme-select w-26 mr-5 cat">
                                     <option value="1">Category</option>
                                     <option value="2">Demo</option>
                                     <option value="3">Demo</option>
                                 </select>
-                                <select name="brand" id="brand" class="theme-select w-26">
+                                <select name="brand" id="brand" class="theme-select w-26 brand">
                                     <option value="1">Brand</option>
                                     <option value="2">Demo</option>
                                     <option value="3">Demo</option>
@@ -174,7 +180,7 @@
                             <div class="ds-flex product-nav mt-6">
                                 <div class="input-group mr-5">
                                     <span class="input-group-addon bg-white border-none-r border-light"><img
-                                            src="assets/img/icon-search.png"></span>
+                                            src="assets/img/icon-search.png" class="search-ic"></span>
                                     <input id="search" type="search"
                                         class="form-control border-none-l border-light custom-input-text h-48"
                                         name="search" placeholder="Product name, Barcode, Item code">
@@ -220,7 +226,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="cart-table mt-4  customs-scroll">
+                            <div class="cart-table mt-4  customs-scroll" id="scroll-to">
                                 <table id="myTable">
                                     <div id="noItemsMessage">
                                         <h3>No items added</h3>
@@ -241,7 +247,7 @@
                                                     stroke-linejoin="round" />
                                             </svg>
                                             Hold invoice</button>
-                                        <button class="btn bg-white ds-flex align-center bt-md semi-bold mt-6"
+                                        <button class="btn bg-white ds-flex align-center bt-md semi-bold mt-6 mt-sm"
                                             data-toggle="modal" data-target="#edit-invoice-tc">
                                             <svg width="25" height="31" viewBox="0 0 25 31" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg" class="mr-3">
@@ -256,7 +262,7 @@
                                     <div class="col-sm-6">
                                         <div class="bill-details">
                                             <button type="button"
-                                                class="btn bg-white ds-flex align-center btn-navy p-0">
+                                                class="btn bg-white ds-flex align-center btn-navy p-0 details">
                                                 <img src="assets/img/icon-view.svg" class="mr-3">View Details
                                             </button>
                                             <div class="total-here ds-flex-between align-center">
@@ -1065,7 +1071,7 @@
                                                 name="location" placeholder="https://Google map link for location">
                                             <span
                                                 class=" input-group-addon bg-white border-none-l border-light addon-width"><button
-                                                    type="button" class="btn bg-primary text-white">Get
+                                                    type="button" class="btn bg-primary text-white get-link">Get
                                                     Location</button></span>
                                         </div>
                                     </div>
