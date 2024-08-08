@@ -929,6 +929,7 @@ button:hover {
   font-size: 16px;
   text-align: left;
   text-wrap: wrap;
+  cursor: pointer;
 }
 
 .cart-table tr td {
@@ -1275,6 +1276,9 @@ select option:checked {
   right: -7px;
   width: 14px;
   height: 14px;
+}
+#pay-bank {
+  display: none;
 }
 
 /*.modal {

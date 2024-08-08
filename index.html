@@ -295,8 +295,7 @@
                 <div class="modal-header border-none-b">
                     <div class="modal-tl">
                         <h2 class="lg-title bold pt-0">Manage Product</h2>
-                        <h4 class="semi-bold text-black mt-6 pt-5"><span class="regular">Product Name :</span> Casual
-                            Texture of Relaxed Shirt</h4>
+                        <h4 class="semi-bold text-black mt-6 pt-5 p-name"><span class="regular">Product Name :</span> </h4>
                     </div>
                 </div>
                 <div class="modal-body pt-3">
@@ -323,8 +322,7 @@
                             <label class="m-lable">Discount Type</label>
                             <select name="d-type" id="d-type" class="theme-select theme-select-modal ds-block w-100">
                                 <option value="1">Fixed</option>
-                                <option value="2">Demo</option>
-                                <option value="3">Demo</option>
+                                <option value="2">Percent</option>
                             </select>
                         </div>
                         <div class="col-sm-6 mb-6">
@@ -347,8 +345,8 @@
                     <div class="mt-6 ds-flex-end">
                         <button type="button" class="btn bt-sm text-pr-dark bg-white"
                             data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal"
-                            data-toggle="modal" data-target="#print">Create</button>
+                        <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal" id="set-discount"  data-dismiss="modal"
+                            >Set</button>
                     </div>
                 </div>
             </div>
@@ -730,12 +728,23 @@
                                 </div>
                                 <div class="radio-wrp mt-6">
                                     <label class="custom-radio mr-2 radio-bl">
-                                        <input type="radio" name="radio-group-payment">
+                                        <input type="radio" name="radio-group-payment"  value="pay-bank">
                                         <span class="radio-circle"></span>
                                         <span class="radio-label ml-4">Multi payment method</span>
                                     </label>
                                 </div>
-
+                                <div class="ds-flex pay-bank mt-5" id="pay-bank">
+                                    <div class="row">
+                                      <div class="col-sm-5">
+                                         <label class="d-block mb-3 medium">Bank</label>
+                                         <input type="number" class="form-control" name="bank-pay" id="bank-pay" placeholder="">
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <label class="d-block mb-3 medium">Cash</label>
+                                            <input type="number" class="form-control" name="cash-pay" id="cash-pay" placeholder="" readonly>
+                                           </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -759,7 +768,7 @@
                                 </div>
                                 <div class="ds-flex-between mt-3">
                                     <h4 class="bold final-total">Total</h4>
-                                    <h4 class="bold">0.00 <span>SAR</span></h4>
+                                    <h4 class="bold" id="payable">0.00 <span>SAR</span></h4>
                                 </div>
                             </div>
                             <div class="check ds-flex align-center mt-6">
@@ -1249,6 +1258,9 @@
     <script src="./assets/js/main.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
