@@ -734,33 +734,27 @@ paymentRadios.forEach(radio => {
 
 // calculate discount 
 document.addEventListener('DOMContentLoaded', function() {
-  let currentDiscountTd = null; // Variable to store the reference to the specific discount td
-  let currentProductIndex = null; // Variable to store the index of the current product
+  let currentDiscountTd = null;
+  let currentProductIndex = null;
 
-  // Function to update the discount value in the products and data arrays
   function updateProductDiscount(productName, discountValue) {
     const productIndex = products.findIndex(product => product.name === productName);
     const dataIndex = data.findIndex(product => product.name === productName);
 
     if (productIndex !== -1) {
-      // Update the discount in the products array
       products[productIndex].discount = discountValue;
     } else {
       console.error('Product not found in the products array.');
     }
 
     if (dataIndex !== -1) {
-      // Update the discount in the data array
       data[dataIndex].discount = discountValue;
-      console.log('Updated data array:', data); // Debugging
+      console.log('Updated data array:', data);
     } else {
       console.error('Product not found in the data array.');
     }
-    
-
   }
 
-  // Handle row click to select discount cell
   document.addEventListener('click', function(event) {
     if (event.target.classList.contains('row_item_name')) {
       const itemName = event.target.textContent.trim();
@@ -770,35 +764,41 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       currentDiscountTd = event.target.closest('tr').querySelector('.discount');
       currentProductIndex = products.findIndex(product => product.name === itemName);
-
     }
   });
 
-  // Handle set discount button click
   const setDiscountButton = document.getElementById('set-discount');
   setDiscountButton.addEventListener('click', function() {
     if (currentDiscountTd && currentProductIndex !== null) {
       const profitMarginInput = document.getElementById('profit-margin');
-      const profitMarginValue = profitMarginInput.value.trim();
+      const profitMarginValue = parseFloat(profitMarginInput.value.trim());
+      const discountType = document.getElementById('d-type').value; // Get the discount type
 
-      if (profitMarginValue !== '') {
+      if (!isNaN(profitMarginValue)) {
         const productName = products[currentProductIndex].name;
 
-        // Update the discount value in both the products and data arrays
-        updateProductDiscount(productName, profitMarginValue);
-        
+        let discountValue;
+        if (discountType === '1') {
+          // Fixed discount
+          discountValue = profitMarginValue;  
+        } else if (discountType === '2') {
+          // Percentage discount
+          const productPrice = products[currentProductIndex].newPrice;
+          discountValue = (profitMarginValue / 100) * productPrice;
+        }
+
+        updateProductDiscount(productName, discountValue);
+
         // Update the displayed discount in the table cell
-        currentDiscountTd.textContent = profitMarginValue;
+        currentDiscountTd.textContent = discountValue.toFixed(2); // Display with two decimal places
         updateTotalSubtotal();
       } else {
-        console.error('Profit margin input is empty.'); // Error handling
+        console.error('Profit margin input is not a valid number.');
       }
     } else {
-      console.error('No valid discount td or product index found.'); // Error handling
+      console.error('No valid discount td or product index found.');
     }
   });
-
-  
 });
 
 

@@ -803,6 +803,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// show hide cart in mobile view 
+
+document.getElementById('cart-mobile').addEventListener('click', function() {
+  const myContent = document.getElementById('my-content');
+  const invoiceParent = document.getElementById('invoice-parent');
+  const closeButton = document.getElementById('close-button');
+  const cartButton = document.getElementById('cart-mobile');
+
+  // Hide my-content with a transition
+  myContent.classList.add('hidden');
+  
+  setTimeout(() => {
+      myContent.style.display = 'none';  // Ensure my-content is hidden
+      invoiceParent.style.display = 'block';  // Make sure invoice-parent is visible before fading in
+      setTimeout(() => {
+          invoiceParent.classList.remove('hidden');
+      }, 50);  // Short delay to allow the display change to apply
+
+      cartButton.style.display = 'none';
+      closeButton.style.display = 'inline';
+  }, 500); // This timeout should match the transition duration
+});
+
+document.getElementById('close-button').addEventListener('click', function() {
+  const myContent = document.getElementById('my-content');
+  const invoiceParent = document.getElementById('invoice-parent');
+  const closeButton = document.getElementById('close-button');
+  const cartButton = document.getElementById('cart-mobile');
+
+  // Hide invoice-parent with a transition
+  invoiceParent.classList.add('hidden');
+  
+  setTimeout(() => {
+      invoiceParent.style.display = 'none';  // Ensure invoice-parent is hidden
+      myContent.style.display = 'block';  // Make sure my-content is visible before fading in
+      setTimeout(() => {
+          myContent.classList.remove('hidden');
+      }, 50);  // Short delay to allow the display change to apply
+
+      closeButton.style.display = 'none';
+      cartButton.style.display = 'inline';
+  }, 500); // This timeout should match the transition duration
+});
+
+
 
 
 

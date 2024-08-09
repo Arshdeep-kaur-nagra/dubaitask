@@ -30,10 +30,11 @@
                 <div class="nav-mob ds-flex-between w-100 align-center">
                    <div>
                     <a href="#"><img src="assets/img/logo.svg" class="logo-nav"></a>
-                    <a href="#scroll-to" class="cart-mobile p-relative pl-4" id="cart-mobile">
+                    <a href="#" class="cart-mobile p-relative pl-4" id="cart-mobile">
                         <img src="assets/img/sales.svg" class="">
                         <span class="tag  total-items-mob">2</span>
                     </a>
+                    <a class ="btn bg-white" id="close-button" style="display: none;"><i class="fa fa-close"></i></a>
                     </div>
                     <button class="btn  bg-white" id="openBtn"><i class="fa fa-bars"></i></button>
                 </div>
@@ -156,7 +157,7 @@
             <div class="content w-100 ">
                 <div class="row m-0 ht-100 pb-5">
                     <!-----------------------main content left--------------------------->
-                    <div class="col-lg-6 bg-gray custom-p overflow-y-hidden ht-100 my-content">
+                    <div class="col-lg-6 bg-gray custom-p overflow-y-hidden ht-100 my-content" id="my-content">
                         <div class="content-right-wrp ht-100">
                             <div class="ds-flex-between product-nav d-small-wrap">
                                 <select name="warehouse-name" id="warehouse" class="theme-select w-40 mr-5 warehouse">
@@ -198,7 +199,7 @@
                         </div>
                     </div>
                     <!-----------------------main content right--------------------------->
-                    <div class="col-lg-6 custom-p overflow-y-hidden ht-100" id="invoice-parent ht-100">
+                    <div class="col-lg-6 custom-p overflow-y-hidden ht-100" id="invoice-parent">
                         <div class="cart-details ds-flex-between dr-col ht-100">
                             <div class="ds-flex-between flex-wrap align-center wrap"  id="scroll-to">
                                 <div class="invoice ds-flex align-center mb-5">
@@ -330,7 +331,7 @@
                             <div class="input-group">
                                 <input id="profit-margin" type="text"
                                     class="form-control border-light custom-input-text h-48 border-none-r"
-                                    name="profit-margin" placeholder="Discount %">
+                                    name="profit-margin" placeholder="Discount ">
                                 <span class="input-group-addon bg-white border-none-l border-light">SAR</span>
                             </div>
                         </div>
