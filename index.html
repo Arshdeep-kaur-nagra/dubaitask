@@ -28,13 +28,13 @@
         <div class="row m-0">
             <div class="col-lg-12">
                 <div class="nav-mob ds-flex-between w-100 align-center">
-                   <div>
-                    <a href="#"><img src="assets/img/logo.svg" class="logo-nav"></a>
-                    <a href="#" class="cart-mobile p-relative pl-4" id="cart-mobile">
-                        <img src="assets/img/sales.svg" class="">
-                        <span class="tag  total-items-mob">2</span>
-                    </a>
-                    <a class ="btn bg-white" id="close-button" style="display: none;"><i class="fa fa-close"></i></a>
+                    <div>
+                        <a href="#"><img src="assets/img/logo.svg" class="logo-nav"></a>
+                        <a href="#" class="cart-mobile p-relative pl-4" id="cart-mobile">
+                            <img src="assets/img/sales.svg" class="">
+                            <span class="tag  total-items-mob">2</span>
+                        </a>
+                        <a class="btn bg-white" id="close-button" style="display: none;"><i class="fa fa-close"></i></a>
                     </div>
                     <button class="btn  bg-white" id="openBtn"><i class="fa fa-bars"></i></button>
                 </div>
@@ -201,7 +201,7 @@
                     <!-----------------------main content right--------------------------->
                     <div class="col-lg-6 custom-p overflow-y-hidden ht-100" id="invoice-parent">
                         <div class="cart-details ds-flex-between dr-col ht-100">
-                            <div class="ds-flex-between flex-wrap align-center wrap"  id="scroll-to">
+                            <div class="ds-flex-between flex-wrap align-center wrap" id="scroll-to">
                                 <div class="invoice ds-flex align-center mb-5">
                                     <h3 class="m-0 text-black bold">Invoice Details</h3>
                                     <div class="tag-invoice flex-center ml-4 align-center">
@@ -284,6 +284,7 @@
                             </div>
                         </div>
                     </div>
+                    <button class="btn" data-toggle="modal" data-target="#invoice-print">Open</button>
                 </div>
             </div>
         </div>
@@ -296,7 +297,8 @@
                 <div class="modal-header border-none-b">
                     <div class="modal-tl">
                         <h2 class="lg-title bold pt-0">Manage Product</h2>
-                        <h4 class="semi-bold text-black mt-6 pt-5 p-name"><span class="regular">Product Name :</span> </h4>
+                        <h4 class="semi-bold text-black mt-6 pt-5 p-name"><span class="regular">Product Name :</span>
+                        </h4>
                     </div>
                 </div>
                 <div class="modal-body pt-3">
@@ -346,8 +348,8 @@
                     <div class="mt-6 ds-flex-end">
                         <button type="button" class="btn bt-sm text-pr-dark bg-white"
                             data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal" id="set-discount"  data-dismiss="modal"
-                            >Set</button>
+                        <button type="button" class="btn bt-sm bg-pr-dark text-white ml-4 open-modal" id="set-discount"
+                            data-dismiss="modal">Set</button>
                     </div>
                 </div>
             </div>
@@ -729,21 +731,23 @@
                                 </div>
                                 <div class="radio-wrp mt-6">
                                     <label class="custom-radio mr-2 radio-bl">
-                                        <input type="radio" name="radio-group-payment"  value="pay-bank">
+                                        <input type="radio" name="radio-group-payment" value="pay-bank">
                                         <span class="radio-circle"></span>
                                         <span class="radio-label ml-4">Multi payment method</span>
                                     </label>
                                 </div>
                                 <div class="ds-flex pay-bank mt-5" id="pay-bank">
                                     <div class="row">
-                                      <div class="col-sm-5">
-                                         <label class="d-block mb-3 medium">Bank</label>
-                                         <input type="number" class="form-control" name="bank-pay" id="bank-pay" placeholder="">
+                                        <div class="col-sm-5">
+                                            <label class="d-block mb-3 medium">Bank</label>
+                                            <input type="number" class="form-control" name="bank-pay" id="bank-pay"
+                                                placeholder="">
                                         </div>
                                         <div class="col-sm-5">
                                             <label class="d-block mb-3 medium">Cash</label>
-                                            <input type="number" class="form-control" name="cash-pay" id="cash-pay" placeholder="" readonly>
-                                           </div>
+                                            <input type="number" class="form-control" name="cash-pay" id="cash-pay"
+                                                placeholder="" readonly>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1253,15 +1257,134 @@
             </div>
         </div>
     </div>
+    <!----printing invoice----->
+    <div class="modal fade" id="invoice-print" role="dialog">
+        <div class="modal-dialog ">
+            <div class="modal-content p-modal">
+                <div class="modal-header p-0 border-none-all">
+                    <button type="button" class="close" data-dismiss="modal" style="opacity: 1;">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 mb-6 text-center">
+                            <label class="text-light regular mb-2 font-21 mb-4 d-block bold">Invoice Details</label>
+                            <div class="mt-6 mb-6">
+                                <p class="font-16 semi-bold">The sample address here, <br>
+                                    street no 1234,<br>
+                                    More address details here
+                                </p>
+                                <div class="ds-flex-between mt-6 pt-5 invoice-text">
+                                    <p>UseName</p>
+                                    <p class="english">Test user</p>
+                                    <p class="arebic">Test user</p>
+                                </div>
+                                <div class="ds-flex-between invoice-text">
+                                    <p>Customer Name</p>
+                                    <p class="english">Dummy</p>
+                                    <p class="arebic">Dummy</p>
+                                </div>
+                                <div class="ds-flex-between invoice-text">
+                                    <p>Cus Vat No.</p>
+                                    <p class="english">Dummy</p>
+                                    <p class="arebic">Dummy</p>
+                                </div>
+                                <div class="ds-flex-between invoice-text">
+                                    <p>Invoice No.</p>
+                                    <p class="english">Dummy</p>
+                                    <p class="arebic">Dummy</p>
+                                </div>
+                                <div class="ds-flex-between invoice-text">
+                                    <p>Invoice Date</p>
+                                    <p class="english">Dummy</p>
+                                    <p class="arebic">Dummy</p>
+                                </div>
+                                <div class="ds-flex-between invoice-text">
+                                    <p>Invoice Time</p>
+                                    <p class="english">Dummy</p>
+                                    <p class="arebic">Dummy</p>
+                                </div>
+                                <table class="w-100 table-print-invoice">
+                                    <tr>
+                                        <th>Total</th>
+                                        <th>Tax</th>
+                                        <th>Price</th>
+                                        <th>QTY</th>
+                                        <th>Product</th>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>3.00</td>
+                                        <td>2.00</td>
+                                        <td>1.00</td>
+                                        <td>Item 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>3.00</td>
+                                        <td>2.00</td>
+                                        <td>1.00</td>
+                                        <td>Item 2</td>
+                                    </tr>
+                                </table>
 
+                                <div class="more-details-invoice mt-6">
+                                    <div class="ds-flex-between mt-6 pt-5 invoice-text">
+                                        <p>Total Discount</p>
+                                        <p class="english">Test user</p>
+                                        <p class="arebic">Test user</p>
+                                    </div>
+                                    <div class="ds-flex-between invoice-text">
+                                        <p>Total before tax</p>
+                                        <p class="english">Dummy</p>
+                                        <p class="arebic">Dummy</p>
+                                    </div>
+                                    <div class="ds-flex-between invoice-text">
+                                        <p>Total after tax</p>
+                                        <p class="english">Dummy</p>
+                                        <p class="arebic">Dummy</p>
+                                    </div>
+                                    <div class="ds-flex-between invoice-text">
+                                        <p>Final total</p>
+                                        <p class="english">Dummy</p>
+                                        <p class="arebic">Dummy</p>
+                                    </div>
+                                    <div class="ds-flex-between invoice-text">
+                                        <p>Total paid</p>
+                                        <p class="english">Dummy</p>
+                                        <p class="arebic">Dummy</p>
+                                    </div>
+                                    <div class="ds-flex-between invoice-text">
+                                        <p>Payment method</p>
+                                        <p class="english">Dummy</p>
+                                        <p class="arebic">Dummy</p>
+                                    </div>
+                                    <div class="ds-flex-between invoice-text">
+                                        <p>Remaning amount</p>
+                                        <p class="english">Dummy</p>
+                                        <p class="arebic">Dummy</p>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <p class="bold">Dummy scanner</p>
+                                <img src="assets/img/scanner.jpg" class="scanner mt-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

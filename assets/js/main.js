@@ -671,7 +671,7 @@ document.addEventListener("DOMContentLoaded", function () {
 $(document).ready(function () {
   $("#print").on("shown.bs.modal", function () {
     setTimeout(function () {
-      $("#invoice-modal").modal("show");
+      $("#invoice-print").modal("show");
     }, 5000);
   });
 });
@@ -846,6 +846,7 @@ document.getElementById('close-button').addEventListener('click', function() {
       cartButton.style.display = 'inline';
   }, 500); // This timeout should match the transition duration
 });
+
 
 
 

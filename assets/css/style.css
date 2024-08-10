@@ -1327,6 +1327,30 @@ select option:checked {
   margin-left: 11px;
   padding: 3px 10px;
 }
+
+.invoice-text p {
+  width: 33%;
+}
+
+.invoice-text p:first-child {
+  text-align: left;
+}
+
+.table-print-invoice th {
+  background: var(--gray);
+  height: 55px;
+  text-align: center;
+}
+
+.table-print-invoice td {
+  border-bottom: 1px dashed var(--black-dim);
+  padding: 10px 0;
+}
+
+.scanner {
+  width: 250px;
+  height: auto;
+}
 /*.modal {
   display: flex;
   align-items: center;
@@ -1646,5 +1670,8 @@ select option:checked {
 @media (max-width: 575px) {
   .product-listing .col {
     width: 50%;
+  }
+  .scanner {
+    width: 150px;
   }
 }
